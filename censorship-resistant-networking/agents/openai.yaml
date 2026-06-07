@@ -1,0 +1,4 @@
+interface:
+  display_name: "Устойчивый доступ к сети"
+  short_description: "Диагностика и настройка устойчивых VPN-схем"
+  default_prompt: "Use $configure-censorship-resistant-networking to diagnose my network restrictions and design a verified Xray/OpenWrt/VPS setup."
