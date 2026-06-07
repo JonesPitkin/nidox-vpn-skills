@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="IMG_0471_edited.png" width="280">
+  <img src="IMG_0471_edited.png" width="420">
 </p>
 
 <h1 align="center">🚀 Nidox VPN Skills</h1>
