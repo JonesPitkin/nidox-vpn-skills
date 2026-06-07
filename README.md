@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="IMG_0471_edited.png" width="420">
+  <img src="nidox-banner.jpg" width="800">
 </p>
 
 <h1 align="center">🚀 Nidox VPN Skills</h1>
 
 <p align="center">
-Коллекция навыков Codex для VPN-инфраструктуры, 3x-ui, Xray, Sing-box, Cloudflare и OpenWrt.
+Коллекция навыков Codex для VPN-инфраструктуры, маршрутизации и устойчивых к блокировкам сетевых решений.
 </p>
 Nidox VPN Skills
 
