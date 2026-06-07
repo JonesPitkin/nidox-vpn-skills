@@ -1,3 +1,12 @@
+<p align="center">
+  <img src="IMG_0471_edited.png" width="280">
+</p>
+
+<h1 align="center">🚀 Nidox VPN Skills</h1>
+
+<p align="center">
+Коллекция навыков Codex для VPN-инфраструктуры, 3x-ui, Xray, Sing-box, Cloudflare и OpenWrt.
+</p>
 Nidox VPN Skills
 
 Коллекция навыков Codex для проектирования, настройки и сопровождения VPN-инфраструктуры.
