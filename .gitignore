@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Temporary
+tmp/
+temp/

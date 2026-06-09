@@ -1,70 +1,85 @@
-# 🔴 ВАЖНО / IMPORTANT
+# nidox-vpn-skills
 
-> **🔴 ВАЖНО**  
-> Для корректной работы этого skill рекомендуется использовать аудит-модуль:  
-> [`nidox-vpn-detection-defense-skill`](https://github.com/JonesPitkin/nidox-vpn-detection-defense-skill)
->
-> Без него проверка конфигураций, маршрутизации, CDN, DNS и VPN-детекта может быть неполной.
->
-> **🔴 IMPORTANT**  
-> For proper operation of this skill it is strongly recommended to use:  
-> [`nidox-vpn-detection-defense-skill`](https://github.com/JonesPitkin/nidox-vpn-detection-defense-skill)
->
-> Without it, validation of VPN configurations, routing, CDN, DNS and detection-resistance settings may be incomplete.
+`nidox-vpn-skills` — главный сборник моих VPN Codex skills. Этот репозиторий используется как мета-уровень для навыков, связанных с проектированием, развёртыванием, настройкой и сопровождением VPN-инфраструктуры.
 
-<p align="center">
-  <img src="IMG_0816.jpeg" width="800">
-</p>
+Сюда складываются skills, относящиеся к следующим направлениям:
 
-<h1 align="center">🚀 Nidox VPN Skills</h1>
+- 3x-ui
+- Podkop
+- OpenWrt / Cudy WR3000S
+- sing-box
+- Xray
+- Cloudflare
+- Remnawave
 
-<p align="center">
-Коллекция навыков Codex для VPN-инфраструктуры, маршрутизации и устойчивых к блокировкам сетевых решений.
-</p>
-Nidox VPN Skills
+Репозиторий фиксирует общую структуру VPN-навыков и задаёт единые правила аудита. При этом существующие skill-файлы и ранее созданные каталоги сохраняются и могут использоваться как часть переходного периода.
 
-Коллекция навыков Codex для проектирования, настройки и сопровождения VPN-инфраструктуры.
+## Быстрая навигация
 
-Репозиторий содержит как готовые навыки, так и собственные разработки для работы с современными инструментами обхода блокировок, маршрутизации и сетевой инфраструктуры.
+- [SKILL_INDEX.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/SKILL_INDEX.md) — центральный каталог VPN Skills со статусами и требованиями к аудиту.
+- [AUDIT_POLICY.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/AUDIT_POLICY.md) — правила обязательного аудита skills внутри `nidox-vpn-skills`.
+- [REPOSITORY_POLICY.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/REPOSITORY_POLICY.md) — разграничение ролей главного репозитория и самостоятельных skill-репозиториев.
+- [ROADMAP.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/ROADMAP.md) — план развития текущих и будущих VPN Skills.
+- [CONTRIBUTING.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/CONTRIBUTING.md) — требования к структуре и включению новых Skills.
 
-Список навыков
+## Структура репозитория
 
-3x-ui-vps
+```text
+nidox-vpn-skills/
+├── README.md
+├── AUDIT_POLICY.md
+├── REPOSITORY_POLICY.md
+├── SKILL_INDEX.md
+├── ROADMAP.md
+├── CONTRIBUTING.md
+├── .gitignore
+├── archive/
+│   ├── macOS/
+│   ├── packages/
+│   └── README.md
+├── skills/
+│   ├── 3x-ui/
+│   │   └── README.md
+│   ├── podkop/
+│   │   └── README.md
+│   ├── openwrt-cudy-wr3000s/
+│   │   └── README.md
+│   ├── sing-box/
+│   │   └── README.md
+│   ├── cloudflare/
+│   │   └── README.md
+│   └── remnawave/
+│       └── README.md
+└── audit/
+    └── nidox-vpn-detection-defense-skill.md
+```
 
-Навык для работы с панелью 3x-ui и VPS-серверами.
+Каталог `skills/` является целевой мета-структурой для VPN-навыков внутри этого репозитория. Если конкретный skill ещё не перенесён или не оформлен отдельно, внутри каталога хранится служебный `README.md`, чтобы структура оставалась явной и сохранялась в Git.
 
-Возможности:
+## Политика аудита
 
-* установка и обновление 3x-ui;
-* настройка VLESS и Reality;
-* работа с подписками;
-* интеграция с Cloudflare;
-* диагностика подключений;
-* обслуживание VPN-серверов.
+Все skills внутри `nidox-vpn-skills` должны проверяться через `nidox-vpn-detection-defense-skill`.
 
-censorship-resistant-networking
+Это обязательное правило действует именно для данного мета-репозитория, потому что здесь навыки рассматриваются как части одной VPN-системы, а не как полностью изолированные модули. Аудит нужен для проверки:
 
-Навык для проектирования устойчивых к блокировкам сетей.
+- VPN detection risks
+- network fingerprints
+- routing artifacts
+- GeoIP / ASN exposure
+- DNS leaks
+- false-positive detection scenarios
 
-Возможности:
+Подробные правила описаны в файле [AUDIT_POLICY.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/AUDIT_POLICY.md).
 
-* проектирование VPN-инфраструктуры;
-* настройка Xray и Sing-box;
-* использование Reality, XHTTP и WebSocket;
-* работа с Cloudflare CDN и WARP;
-* настройка HAProxy;
-* маршрутизация и DNS;
-* диагностика сетевых проблем;
-* повышение устойчивости к блокировкам.
+Общая роль главного репозитория и границы между мета-репозиторием и отдельными skill-репозиториями дополнительно описаны в файле [REPOSITORY_POLICY.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/REPOSITORY_POLICY.md).
 
-Планируемые навыки
+## Связанные репозитории
 
-* podkop-openwrt
-* remnawave-admin
-* cloudflare-proxy
-* sing-box-admin
-* xray-admin
+- `3x-ui-skills` — самостоятельный репозиторий навыков для 3x-ui.
+- `podkop-skills` — самостоятельный репозиторий навыков для Podkop.
+- `openwrt-cudy-wr3000s-skill` — самостоятельный репозиторий навыков для OpenWrt / Cudy WR3000S.
+- `sing-box-skill` — самостоятельный репозиторий навыков для sing-box.
+- `remnawave-skill` — самостоятельный репозиторий навыков для Remnawave.
+- `nidox-vpn-detection-defense-skill` — отдельный аудит-модуль для проверки VPN skills.
 
-Автор
-
-Личная коллекция навыков проекта Nidox.
+Отдельные репозитории могут использоваться сами по себе без обязательного аудита. Обязательная проверка через `nidox-vpn-detection-defense-skill` включается в тот момент, когда skill используется внутри `nidox-vpn-skills`.
