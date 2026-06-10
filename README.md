@@ -2,6 +2,8 @@
 
 `nidox-vpn-skills` — главный сборник моих VPN Codex skills. Этот репозиторий используется как мета-уровень для навыков, связанных с проектированием, развёртыванием, настройкой и сопровождением VPN-инфраструктуры.
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 Сюда складываются skills, относящиеся к следующим направлениям:
 
 - 3x-ui
@@ -16,11 +18,12 @@
 
 ## Быстрая навигация
 
-- [SKILL_INDEX.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/SKILL_INDEX.md) — центральный каталог VPN Skills со статусами и требованиями к аудиту.
-- [AUDIT_POLICY.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/AUDIT_POLICY.md) — правила обязательного аудита skills внутри `nidox-vpn-skills`.
-- [REPOSITORY_POLICY.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/REPOSITORY_POLICY.md) — разграничение ролей главного репозитория и самостоятельных skill-репозиториев.
-- [ROADMAP.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/ROADMAP.md) — план развития текущих и будущих VPN Skills.
-- [CONTRIBUTING.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/CONTRIBUTING.md) — требования к структуре и включению новых Skills.
+- [SKILL_INDEX.md](./SKILL_INDEX.md) — центральный каталог VPN Skills со статусами и требованиями к аудиту.
+- [AUDIT_POLICY.md](./AUDIT_POLICY.md) — правила обязательного аудита skills внутри `nidox-vpn-skills`.
+- [REPOSITORY_POLICY.md](./REPOSITORY_POLICY.md) — разграничение ролей главного репозитория и самостоятельных skill-репозиториев.
+- [ROADMAP.md](./ROADMAP.md) — план развития текущих и будущих VPN Skills.
+- [CONTRIBUTING.md](./CONTRIBUTING.md) — требования к структуре и включению новых Skills.
+- [network-fundamentals/](./network-fundamentals/) — встроенный фундаментальный skill по сетям.
 
 ## Структура репозитория
 
@@ -32,7 +35,15 @@ nidox-vpn-skills/
 ├── SKILL_INDEX.md
 ├── ROADMAP.md
 ├── CONTRIBUTING.md
+├── LICENSE
 ├── .gitignore
+├── network-fundamentals/
+│   ├── README.md
+│   ├── SKILL.md
+│   ├── AUDIT.md
+│   ├── QUALITY_REPORT.md
+│   ├── references/
+│   └── ...
 ├── archive/
 │   ├── macOS/
 │   ├── packages/
@@ -69,9 +80,18 @@ nidox-vpn-skills/
 - DNS leaks
 - false-positive detection scenarios
 
-Подробные правила описаны в файле [AUDIT_POLICY.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/AUDIT_POLICY.md).
+Подробные правила описаны в файле [AUDIT_POLICY.md](./AUDIT_POLICY.md).
 
-Общая роль главного репозитория и границы между мета-репозиторием и отдельными skill-репозиториями дополнительно описаны в файле [REPOSITORY_POLICY.md](/Users/evgeniishumilkin/Documents/Скилы/nidox-vpn-skills/REPOSITORY_POLICY.md).
+Общая роль главного репозитория и границы между мета-репозиторием и отдельными skill-репозиториями дополнительно описаны в файле [REPOSITORY_POLICY.md](./REPOSITORY_POLICY.md).
+
+## Network Fundamentals
+
+В репозиторий добавлен отдельный фундаментальный skill по компьютерным сетям:
+
+- встроенная версия: [network-fundamentals/](./network-fundamentals/)
+- самостоятельный репозиторий: [network-fundamentals-skill](https://github.com/JonesPitkin/network-fundamentals-skill)
+
+Раздел предназначен для общей сетевой теории и практической диагностики: OSI, TCP/IP, TCP и UDP, MTU и MSS, NAT и CGNAT, routing, gateway, DNS, IPv4, IPv6 и порты.
 
 ## Связанные репозитории
 
@@ -80,6 +100,13 @@ nidox-vpn-skills/
 - `openwrt-cudy-wr3000s-skill` — самостоятельный репозиторий навыков для OpenWrt / Cudy WR3000S.
 - `sing-box-skill` — самостоятельный репозиторий навыков для sing-box.
 - `remnawave-skill` — самостоятельный репозиторий навыков для Remnawave.
+- [`network-fundamentals-skill`](https://github.com/JonesPitkin/network-fundamentals-skill) — самостоятельный репозиторий фундаментального сетевого справочника для Codex.
 - `nidox-vpn-detection-defense-skill` — отдельный аудит-модуль для проверки VPN skills.
 
 Отдельные репозитории могут использоваться сами по себе без обязательного аудита. Обязательная проверка через `nidox-vpn-detection-defense-skill` включается в тот момент, когда skill используется внутри `nidox-vpn-skills`.
+
+## License
+
+Репозиторий лицензирован по лицензии MIT. Материалы можно свободно использовать, изменять и распространять в соответствии с условиями лицензии MIT.
+
+Полный текст лицензии: [LICENSE](./LICENSE)
