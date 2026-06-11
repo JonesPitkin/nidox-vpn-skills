@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cudy WR3000S с OpenWrt"
+  short_description: "База знаний по Cudy WR3000S v1 и OpenWrt"
+  default_prompt: "Используй $openwrt-cudy-wr3000s для настройки или диагностики Cudy WR3000S v1 с OpenWrt."

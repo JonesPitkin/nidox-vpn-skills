@@ -1,0 +1,4 @@
+name: openwrt-cudy-wr3000s-install
+description: Installation and upgrade skill for Cudy WR3000S v1 on OpenWrt.
+metadata:
+  default_prompt: "Use $openwrt-cudy-wr3000s-install for installation and upgrade planning on Cudy WR3000S v1."

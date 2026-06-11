@@ -1,0 +1,4 @@
+name: openwrt-cudy-wr3000s-services
+description: Podkop, sing-box, and performance skill for Cudy WR3000S v1 on OpenWrt.
+metadata:
+  default_prompt: "Use $openwrt-cudy-wr3000s-services to plan Podkop, sing-box, DNS, FakeIP, and performance-sensitive services on Cudy WR3000S v1."

@@ -17,7 +17,7 @@
 ## Skills
 
 - network-fundamentals
-- openwrt-skills
+- openwrt-cudy-wr3000s-skills
 - podkop-skills
 - 3x-ui-skills
 - cloudflare-skills
@@ -34,7 +34,7 @@
 - remnawave-skills
 - sing-box-skills
 - network-fundamentals
-- openwrt-cudy-wr3000s
+- openwrt-cudy-wr3000s-skills
 
 ## Быстрая навигация
 
@@ -105,6 +105,12 @@ nidox-vpn-skills/
 │   ├── VERSION_MATRIX.md
 │   ├── MIGRATION_GUIDE.md
 │   └── ...
+├── openwrt-cudy-wr3000s-skills/
+│   ├── README.md
+│   ├── SKILL_INDEX.md
+│   ├── VERSION_MATRIX.md
+│   ├── MIGRATION_GUIDE.md
+│   └── ...
 ├── sing-box-skills/
 │   ├── README.md
 │   ├── SKILL_INDEX.md
@@ -148,7 +154,7 @@ nidox-vpn-skills/
 - `3x-ui-skills` — самостоятельный репозиторий навыков для 3x-ui.
 - `podkop-skills` — самостоятельный репозиторий навыков для Podkop.
 - `cloudflare-skills` — самостоятельный репозиторий навыков для Cloudflare-публикации VPN-инфраструктуры.
-- `openwrt-cudy-wr3000s-skill` — самостоятельный репозиторий навыков для OpenWrt / Cudy WR3000S.
+- `openwrt-cudy-wr3000s-skills` — самостоятельный репозиторий навыков для OpenWrt / Cudy WR3000S.
 - `sing-box-skills` — самостоятельный репозиторий навыков для sing-box.
 - `remnawave-skills` — самостоятельный репозиторий навыков для Remnawave.
 - [`network-fundamentals-skill`](https://github.com/JonesPitkin/network-fundamentals-skill) — самостоятельный репозиторий фундаментального сетевого справочника для Codex.

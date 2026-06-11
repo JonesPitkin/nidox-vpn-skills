@@ -9,7 +9,7 @@ network-fundamentals
 │   ├── remnawave-skills
 │   └── cloudflare-skills
 │
-├── openwrt-cudy-wr3000s
+├── openwrt-cudy-wr3000s-skills
 │   ├── podkop-skills
 │   └── sing-box-skills
 │
@@ -25,5 +25,5 @@ network-fundamentals
 
 - `network-fundamentals` is the conceptual base layer.
 - `sing-box-skills` acts as a central protocol and deployment layer for multiple VPN-related skill families.
-- `openwrt-cudy-wr3000s` remains the hardware and platform specialization layer.
+- `openwrt-cudy-wr3000s-skills` remains the hardware and platform specialization layer.
 - `nidox-vpn-detection-defense-skill` remains the audit layer inside `nidox-vpn-skills`.

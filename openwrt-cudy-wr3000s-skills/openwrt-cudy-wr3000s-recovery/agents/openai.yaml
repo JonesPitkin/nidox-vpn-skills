@@ -1,0 +1,4 @@
+name: openwrt-cudy-wr3000s-recovery
+description: Recovery skill for Cudy WR3000S v1 on OpenWrt.
+metadata:
+  default_prompt: "Use $openwrt-cudy-wr3000s-recovery to choose and execute the safest recovery path for Cudy WR3000S v1."

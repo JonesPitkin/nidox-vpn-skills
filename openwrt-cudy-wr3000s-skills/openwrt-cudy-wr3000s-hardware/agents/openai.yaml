@@ -1,0 +1,4 @@
+name: openwrt-cudy-wr3000s-hardware
+description: Hardware and compatibility skill for Cudy WR3000S v1 on OpenWrt.
+metadata:
+  default_prompt: "Use $openwrt-cudy-wr3000s-hardware to check hardware fit, revisions, LEDs, and limits of Cudy WR3000S v1."
