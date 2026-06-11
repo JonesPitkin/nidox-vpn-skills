@@ -1,0 +1,4 @@
+interface:
+  display_name: "3X-UI Inbounds"
+  short_description: "Все inbounds, transports и клиенты 3X-UI"
+  default_prompt: "Use $3x-ui-inbounds to design, configure, validate, or troubleshoot a 3X-UI inbound."

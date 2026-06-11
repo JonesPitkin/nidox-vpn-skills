@@ -1,0 +1,4 @@
+interface:
+  display_name: "3X-UI Install"
+  short_description: "Установка и обслуживание панели 3X-UI"
+  default_prompt: "Use $3x-ui-install to safely install, update, back up, or troubleshoot 3X-UI."

@@ -1,0 +1,92 @@
+---
+name: 3x-ui-cloudflare
+description: Проектировать, настраивать и диагностировать интеграцию 3X-UI с Cloudflare DNS, orange-cloud Proxy/CDN, TLS modes, WebSocket, gRPC, Origin Rules, Origin CA и Cloudflare Tunnel. Использовать при публикации панели/подписок, выборе DNS-only или proxied endpoint, ошибках 522/525/526 и проверке совместимости VLESS, Trojan, REALITY, WS и gRPC.
+---
+
+# 3X-UI Cloudflare
+
+Cloudflare Proxy — HTTP/HTTPS reverse proxy, а не универсальный Xray transport. Сначала определить protocol/transport, затем решать, может ли endpoint быть proxied.
+
+## Матрица совместимости
+
+| Схема | Standard Cloudflare Proxy |
+|---|---|
+| Panel/subscription HTTP(S) | Да |
+| VLESS/Trojan over WebSocket + TLS | Да, при совпадении host/path |
+| VLESS/Trojan over gRPC + TLS | Да, port 443, HTTP/2 и gRPC enabled |
+| VLESS/Trojan raw TCP | Нет; DNS-only либо Spectrum |
+| VLESS/Trojan + REALITY | Нет перед standard proxy; использовать DNS-only/direct |
+| Hysteria2/UDP | Нет для standard proxy |
+| Cloudflare Tunnel для panel | Да |
+
+XHTTP/HTTPUpgrade проверять по текущей документации Cloudflare и конкретному client/core. Не считать их автоматически эквивалентными WebSocket.
+
+## Рабочий процесс
+
+1. Зафиксировать hostname, DNS record, proxy status, origin IP/port, transport, TLS termination и certificate.
+2. Выбрать архитектуру по [references/overview.md](references/overview.md).
+3. Настроить DNS: [references/dns.md](references/dns.md).
+4. Для CDN проверить ports/limits: [references/proxy-cdn.md](references/proxy-cdn.md).
+5. Настроить `Full (strict)`: [references/tls-modes.md](references/tls-modes.md) и [references/certificates.md](references/certificates.md).
+6. Настроить transport: [references/websockets.md](references/websockets.md) или [references/grpc.md](references/grpc.md).
+7. При необходимости применить [references/origin-rules.md](references/origin-rules.md) или [references/tunnel.md](references/tunnel.md).
+8. Ошибки разбирать по [references/troubleshooting.md](references/troubleshooting.md).
+
+## Проверка
+
+```sh
+dig +short <hostname>
+curl -I https://<hostname>/<path>/
+openssl s_client -connect <origin-ip>:443 -servername <hostname> </dev/null
+journalctl -u x-ui -n 200 --no-pager
+```
+
+Проверять отдельно DNS-only origin, Cloudflare edge, origin TLS и Xray transport. Не отключать TLS verification как постоянное исправление.
+
+## Правила безопасности
+
+- Рекомендовать `Full (strict)`, не `Flexible`.
+- Cloudflare API Token ограничивать `Zone:DNS:Edit` и одной zone.
+- Origin CA private key хранить только на origin с mode `0600`.
+- Если origin предназначен только для proxied traffic, ограничить source Cloudflare IP ranges либо использовать Tunnel.
+- REALITY private key и Xray client secrets не загружать в Cloudflare.
+
+## Обязательный аудит детекта
+
+Перед выдачей финального решения обязательно использовать репозиторий:
+
+- `nidox-vpn-detection-defense-skill`
+
+Проверять:
+
+- GeoIP
+- ASN
+- hosting
+- IP reputation
+- DNS
+- маршрутизацию
+- MTU
+- Android признаки VPN
+- iOS признаки VPN
+- ложноположительные срабатывания
+- ограничения методики
+
+Использовать также:
+
+- `references/required-skills.md`
+- `references/final-report-template.md`
+- `skill-entrypoint.md`
+
+## Mandatory VPN Detection Audit
+
+Before any final recommendation, deployment guide, troubleshooting procedure, architecture review, routing analysis or VPN assessment related to VPN, Proxy, VLESS, Reality, Xray, sing-box, Cloudflare, CDN, Podkop or OpenWrt, the assistant MUST invoke:
+
+nidox-vpn-detection-defense-skill
+
+The final answer MUST include:
+
+Проверка на признаки детекта
+
+## Актуальность
+
+Проверено 2026-06-07 по 3X-UI `v3.2.8`, текущей Wiki/репозиторию и официальной Cloudflare Developers documentation. Cloudflare plans, ports и product limits изменяемы; проверять перед внедрением.

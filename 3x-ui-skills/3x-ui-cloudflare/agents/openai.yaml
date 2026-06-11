@@ -1,0 +1,4 @@
+interface:
+  display_name: "3X-UI Cloudflare"
+  short_description: "Cloudflare DNS, CDN, TLS, Tunnel и transports для 3X-UI"
+  default_prompt: "Use $3x-ui-cloudflare to design, configure, validate, or troubleshoot Cloudflare integration for 3X-UI."

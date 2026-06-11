@@ -1,0 +1,4 @@
+interface:
+  display_name: "3X-UI Security"
+  short_description: "Защита панели, TLS, SSH, firewall и резервных копий"
+  default_prompt: "Use $3x-ui-security to harden, audit, validate, or troubleshoot a 3X-UI deployment."

@@ -1,0 +1,4 @@
+name: cloudflare
+description: Repository entry skill for Cloudflare VPN publishing and troubleshooting.
+metadata:
+  default_prompt: "Use $cloudflare to design or troubleshoot Cloudflare-based VPN publishing."

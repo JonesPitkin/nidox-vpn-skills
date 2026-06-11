@@ -20,9 +20,21 @@
 - openwrt-skills
 - podkop-skills
 - 3x-ui-skills
+- cloudflare-skills
+- remnawave-skills
 - sing-box-skills
 
 Репозиторий фиксирует общую структуру VPN-навыков и задаёт единые правила аудита. При этом существующие skill-файлы и ранее созданные каталоги сохраняются и могут использоваться как часть переходного периода.
+
+## Skill repositories
+
+- 3x-ui-skills
+- podkop-skills
+- cloudflare-skills
+- remnawave-skills
+- sing-box-skills
+- network-fundamentals
+- openwrt-cudy-wr3000s
 
 ## Быстрая навигация
 
@@ -69,6 +81,30 @@ nidox-vpn-skills/
 │   │   └── README.md
 │   └── remnawave/
 │       └── README.md
+├── 3x-ui-skills/
+│   ├── README.md
+│   ├── SKILL_INDEX.md
+│   ├── VERSION_MATRIX.md
+│   ├── MIGRATION_GUIDE.md
+│   └── ...
+├── podkop-skills/
+│   ├── README.md
+│   ├── SKILL_INDEX.md
+│   ├── VERSION_MATRIX.md
+│   ├── MIGRATION_GUIDE.md
+│   └── ...
+├── cloudflare-skills/
+│   ├── README.md
+│   ├── SKILL_INDEX.md
+│   ├── VERSION_MATRIX.md
+│   ├── MIGRATION_GUIDE.md
+│   └── ...
+├── remnawave-skills/
+│   ├── README.md
+│   ├── SKILL_INDEX.md
+│   ├── VERSION_MATRIX.md
+│   ├── MIGRATION_GUIDE.md
+│   └── ...
 ├── sing-box-skills/
 │   ├── README.md
 │   ├── SKILL_INDEX.md
@@ -111,9 +147,10 @@ nidox-vpn-skills/
 
 - `3x-ui-skills` — самостоятельный репозиторий навыков для 3x-ui.
 - `podkop-skills` — самостоятельный репозиторий навыков для Podkop.
+- `cloudflare-skills` — самостоятельный репозиторий навыков для Cloudflare-публикации VPN-инфраструктуры.
 - `openwrt-cudy-wr3000s-skill` — самостоятельный репозиторий навыков для OpenWrt / Cudy WR3000S.
 - `sing-box-skills` — самостоятельный репозиторий навыков для sing-box.
-- `remnawave-skill` — самостоятельный репозиторий навыков для Remnawave.
+- `remnawave-skills` — самостоятельный репозиторий навыков для Remnawave.
 - [`network-fundamentals-skill`](https://github.com/JonesPitkin/network-fundamentals-skill) — самостоятельный репозиторий фундаментального сетевого справочника для Codex.
 - `nidox-vpn-detection-defense-skill` — отдельный аудит-модуль для проверки VPN skills.
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "3X-UI Routing"
+  short_description: "Маршрутизация, DNS и балансировка Xray в 3X-UI"
+  default_prompt: "Use $3x-ui-routing to design, configure, validate, or troubleshoot Xray routing and DNS in 3X-UI."
