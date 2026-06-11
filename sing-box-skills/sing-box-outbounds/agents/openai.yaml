@@ -1,0 +1,4 @@
+display_name: sing-box Outbounds
+short_description: Служебные и прокси outbounds, группы выбора и современные transports
+default_prompt: Сравни outbounds sing-box, выбери подходящий транспорт, покажи актуальный JSON и укажи ограничения, deprecated-поля и лучшие сценарии применения.
+

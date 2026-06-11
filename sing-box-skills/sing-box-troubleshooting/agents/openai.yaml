@@ -1,0 +1,4 @@
+display_name: sing-box Troubleshooting
+short_description: Диагностика DNS, TUN, routing, TLS, REALITY и transport-сбоев
+default_prompt: Найди первопричину проблемы в sing-box, раздели симптомы по слоям и предложи минимальное исправление с учётом актуальной документации.
+

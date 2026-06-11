@@ -1,0 +1,4 @@
+display_name: sing-box Inbounds
+short_description: Mixed, SOCKS, HTTP, TUN, redirect, tproxy и direct inbounds
+default_prompt: Подбери подходящий inbound sing-box, покажи схему работы, актуальный JSON-пример и проверь типичные ошибки настройки.
+

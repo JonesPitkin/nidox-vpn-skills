@@ -1,0 +1,4 @@
+display_name: sing-box Routing
+short_description: Route rules, actions, split tunneling и selective proxying
+default_prompt: Разбери routing в sing-box, спроектируй правила и final action, проверь rule_set, bypass и конфликтующие match-условия.
+

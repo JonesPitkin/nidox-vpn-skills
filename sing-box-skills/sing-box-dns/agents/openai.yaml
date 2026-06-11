@@ -1,0 +1,4 @@
+display_name: sing-box DNS
+short_description: DNS servers, rules, FakeIP, split DNS и anti-leak схемы в sing-box
+default_prompt: Разбери DNS-конфигурацию sing-box, предложи современную схему servers и rules, проверь FakeIP, cache и domain_resolver без legacy форматов.
+

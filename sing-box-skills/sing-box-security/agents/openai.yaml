@@ -1,0 +1,4 @@
+display_name: sing-box Security
+short_description: TLS, REALITY, ECH, сертификаты и TLS-related hardening
+default_prompt: Проверь security-конфигурацию sing-box, объясни TLS/REALITY/ECH, найди deprecated поля и предложи безопасный актуальный JSON.
+

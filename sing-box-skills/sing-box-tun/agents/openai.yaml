@@ -1,0 +1,4 @@
+display_name: sing-box TUN
+short_description: TUN, auto_route, auto_redirect и transparent routing
+default_prompt: Проверь TUN-конфигурацию sing-box, объясни auto_route и auto_redirect, покажи корректный JSON и найди причины routing loop, DNS leak или неработающего transparent mode.
+

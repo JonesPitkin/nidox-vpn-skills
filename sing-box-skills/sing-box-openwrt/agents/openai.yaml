@@ -1,0 +1,4 @@
+display_name: sing-box OpenWrt
+short_description: Установка, procd, DNS и transparent deployment sing-box на OpenWrt
+default_prompt: Помоги развернуть sing-box на OpenWrt, проверь пакетную установку, procd-конфиг, DNS и transparent routing без устаревших схем.
+

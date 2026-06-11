@@ -1,0 +1,4 @@
+display_name: sing-box Rule Sets
+short_description: Современные local и remote rule sets вместо GeoSite и GeoIP
+default_prompt: Помоги построить современную rule_set-схему sing-box, мигрируй с geosite/geoip, выбери local или remote формат и проверь обновление наборов правил.
+
