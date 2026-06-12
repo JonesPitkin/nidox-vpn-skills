@@ -1,0 +1,4 @@
+name: cloudflare-zero-trust
+description: Skill по Cloudflare Zero Trust, Access, IdP, Cloudflare One Client, WARP и service tokens.
+metadata:
+  default_prompt: "Используй $cloudflare-zero-trust, чтобы спроектировать Access policy, IdP и WARP/service token доступ через Cloudflare Zero Trust."

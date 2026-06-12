@@ -1,0 +1,4 @@
+name: cloudflare-ssl-tls
+description: Skill по Cloudflare SSL/TLS modes, edge certificates и Origin CA.
+metadata:
+  default_prompt: "Используй $cloudflare-ssl-tls, чтобы выбрать SSL/TLS mode Cloudflare и объяснить разницу между edge и origin certificates."

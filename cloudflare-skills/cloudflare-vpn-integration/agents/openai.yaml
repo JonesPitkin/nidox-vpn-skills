@@ -1,0 +1,4 @@
+name: cloudflare-vpn-integration
+description: Skill по Cloudflare-side интеграции с OpenWrt, sing-box, 3x-ui, Nginx Proxy Manager и homelab.
+metadata:
+  default_prompt: "Используй $cloudflare-vpn-integration, чтобы спроектировать Cloudflare-архитектуру рядом с OpenWrt, sing-box, 3x-ui, Nginx Proxy Manager или homelab."

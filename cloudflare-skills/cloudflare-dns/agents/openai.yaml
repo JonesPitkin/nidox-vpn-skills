@@ -1,0 +1,4 @@
+name: cloudflare-dns
+description: Skill по Cloudflare DNS, DNS-записям, proxy status и DNSSEC.
+metadata:
+  default_prompt: "Используй $cloudflare-dns, чтобы выбрать DNS record type, proxy status и DNSSEC-подход для Cloudflare."

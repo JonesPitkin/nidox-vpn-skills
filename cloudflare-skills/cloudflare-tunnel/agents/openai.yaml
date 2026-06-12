@@ -1,0 +1,4 @@
+name: cloudflare-tunnel
+description: Skill по Cloudflare Tunnel, cloudflared, public hostnames и private network routing.
+metadata:
+  default_prompt: "Используй $cloudflare-tunnel, чтобы спроектировать Cloudflare Tunnel для public hostname или private network доступа."

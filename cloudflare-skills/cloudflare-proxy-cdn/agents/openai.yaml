@@ -1,0 +1,4 @@
+name: cloudflare-proxy-cdn
+description: Skill по Cloudflare Proxy/CDN, кэшированию, WebSocket и origin headers.
+metadata:
+  default_prompt: "Используй $cloudflare-proxy-cdn, чтобы проверить standard Cloudflare Proxy/CDN, supported ports и заголовки до origin."

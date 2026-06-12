@@ -1,0 +1,4 @@
+name: cloudflare-security
+description: Skill по WAF, custom rules, rate limiting, bot protection и DDoS protection.
+metadata:
+  default_prompt: "Используй $cloudflare-security, чтобы спроектировать защиту на стороне Cloudflare через WAF, custom rules и DDoS controls."

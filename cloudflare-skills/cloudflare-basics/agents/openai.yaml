@@ -1,0 +1,4 @@
+name: cloudflare-basics
+description: Базовый Cloudflare skill по архитектуре edge, Anycast, CDN и proxy status.
+metadata:
+  default_prompt: "Используй $cloudflare-basics, чтобы объяснить архитектуру Cloudflare и правильно классифицировать Proxied, DNS only, edge и origin."
