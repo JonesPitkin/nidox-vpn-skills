@@ -1,52 +1,89 @@
-# nidox-vpn-skills
+# NIDOX VPN Skills
 
-`nidox-vpn-skills` — главный сборник моих VPN Codex skills. Этот репозиторий используется как мета-уровень для навыков, связанных с проектированием, развёртыванием, настройкой и сопровождением VPN-инфраструктуры.
+![NIDOX VPN Skills Banner](./IMG_0816.jpeg)
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+> Русскоязычная база навыков для Codex по сетям, VPN-инфраструктуре, OpenWrt, Cloudflare, sing-box, 3x-ui, Podkop, Remnawave и homelab.
+
+![Release: v1.0.0](https://img.shields.io/badge/Release-v1.0.0-0A7B83?style=flat-square)
+![License: MIT](https://img.shields.io/badge/License-MIT-F2C14E?style=flat-square)
+![Language: Russian](https://img.shields.io/badge/Language-Russian-2563EB?style=flat-square)
+![Status: Active Development](https://img.shields.io/badge/Status-Active_Development-2E8B57?style=flat-square)
+
+`nidox-vpn-skills` — мета-репозиторий и единая точка входа для NIDOX skill-пакетов, связанных с проектированием, публикацией, настройкой и сопровождением современной VPN-инфраструктуры.
 
 Current release: `v1.0.0` — `NIDOX VPN Skills Foundation`
 
-Сюда складываются skills, относящиеся к следующим направлениям:
+## Что входит в репозиторий
 
-- 3x-ui
-- Podkop
-- OpenWrt / Cudy WR3000S
-- sing-box
-- Xray
-- Cloudflare
-- Remnawave
+- `network-fundamentals` — базовый слой сетевых знаний.
+- `cloudflare-skills` — DNS, CDN, TLS, Tunnel, Zero Trust и edge-публикация.
+- `openwrt-cudy-wr3000s-skills` — OpenWrt и эксплуатация роутеров на базе Cudy WR3000S.
+- `sing-box-skills` — транспорты, маршрутизация, DNS и policy logic.
+- `3x-ui-skills` — панель управления VPN-пользователями и Xray-инфраструктурой.
+- `remnawave-skills` — современная VPN-панель и рабочие сценарии эксплуатации.
+- `podkop-skills` — OpenWrt routing и интеграция Podkop.
+- `censorship-resistant-networking` — концептуальный слой устойчивых к блокировкам сетей.
 
-## Skills
+Репозиторий фиксирует общую структуру навыков, правила навигации и единые требования к аудиту. Основной рабочей моделью остаются самостоятельные skill-репозитории и верхнеуровневые пакеты без legacy-обёртки `skills/`.
 
-- network-fundamentals
-- openwrt-cudy-wr3000s-skills
-- podkop-skills
-- 3x-ui-skills
-- cloudflare-skills
-- remnawave-skills
-- sing-box-skills
+## Skill Dependency Map
 
-## Базовые skill-пакеты
+```mermaid
+flowchart TD
+    NF[network-fundamentals<br/>Базовые сетевые знания]
+    CF[cloudflare-skills<br/>DNS, CDN, TLS, Tunnel, Zero Trust]
+    OW[openwrt-cudy-wr3000s-skills<br/>OpenWrt и Cudy WR3000S]
+    SB[sing-box-skills<br/>Транспорт, маршрутизация, правила]
+    XUI[3x-ui-skills<br/>VPN-панель и пользователи]
+    REM[remnawave-skills<br/>Современная VPN-панель]
+    POD[podkop-skills<br/>OpenWrt routing и Podkop]
+    CRN[censorship-resistant-networking<br/>Концептуальный слой устойчивых сетей]
 
-- `network-fundamentals`
-- `cloudflare-skills`
-- `openwrt-cudy-wr3000s-skills`
-- `sing-box-skills`
-- `3x-ui-skills`
-- `podkop-skills`
-- `remnawave-skills`
+    NF --> CF
+    NF --> OW
+    NF --> SB
+    CF --> XUI
+    CF --> CRN
+    SB --> XUI
+    SB --> REM
+    SB --> POD
+    OW --> POD
+    NF --> CRN
+    SB --> CRN
+```
 
-Репозиторий фиксирует общую структуру VPN-навыков и задаёт единые правила аудита. Основной рабочей моделью считаются самостоятельные skill-репозитории и встроенные каталоги верхнего уровня без legacy-обёртки `skills/`.
+Диаграмма показывает базовые концептуальные зависимости между пакетами. `network-fundamentals` выступает фундаментом, а `sing-box-skills` и `cloudflare-skills` формируют ключевой слой для более прикладных VPN и OpenWrt-сценариев.
 
-## Skill repositories
+## Статусы skill-пакетов
 
-- 3x-ui-skills
-- podkop-skills
-- cloudflare-skills
-- remnawave-skills
-- sing-box-skills
-- network-fundamentals
-- openwrt-cudy-wr3000s-skills
+| Skill Package | Роль | Статус | Примечание |
+| --- | --- | --- | --- |
+| `network-fundamentals` | Базовая сеть и диагностика | Stable | Фундамент для остальных skill-пакетов |
+| `cloudflare-skills` | Публикация, DNS, TLS, Tunnel | In Progress | Расширение edge и integration-сценариев |
+| `openwrt-cudy-wr3000s-skills` | OpenWrt и Cudy WR3000S | In Progress | Углубление install/recovery/routing-практик |
+| `sing-box-skills` | Транспорты, DNS, маршрутизация | In Progress | Расширение routing и transport matrix |
+| `3x-ui-skills` | Xray/VLESS panel operations | Stable | Базовый пакет после `v1.0.0` |
+| `remnawave-skills` | Современная VPN-панель | In Progress | Развитие production- и migration-сценариев |
+| `podkop-skills` | OpenWrt routing и Podkop | Stable | Базовый пакет после `v1.0.0` |
+| `censorship-resistant-networking` | Архитектурный слой устойчивых сетей | Incubating | Концептуальный пакет для `v1.1+` |
+
+Все skill-пакеты внутри `nidox-vpn-skills` должны проходить аудит через `nidox-vpn-detection-defense-skill`, когда используются как часть общей VPN-системы репозитория.
+
+## Roadmap
+
+### v1.1
+
+- Довести `cloudflare-skills`, `sing-box-skills` и `openwrt-cudy-wr3000s-skills` до более полной operational-документации.
+- Расширить `remnawave-skills` production-сценариями, migration notes и практиками обслуживания.
+- Упорядочить cross-links между пакетами, чтобы навигация по зависимостям была линейной и предсказуемой.
+- Формализовать `censorship-resistant-networking` как поддерживаемый концептуальный слой для сложных anti-censorship topology decisions.
+
+### v2.0
+
+- Добавить новые skill-направления для `Xray Core`, `VPS Infrastructure`, `GeoIP / ASN Strategy` и `VPN Detection Research`.
+- Сформировать более зрелую knowledge graph-модель между пакетами, аудитом и deployment-сценариями.
+- Подготовить единый production-grade meta-index для router, panel, transport, DNS и edge-публикации.
+- Довести репозиторий до состояния полного reference-hub для русскоязычной VPN и homelab-экспертизы под Codex.
 
 ## Быстрая навигация
 
@@ -56,7 +93,7 @@ Current release: `v1.0.0` — `NIDOX VPN Skills Foundation`
 - [AUDIT_POLICY.md](./AUDIT_POLICY.md) — правила обязательного аудита skills внутри `nidox-vpn-skills`.
 - [REPOSITORY_POLICY.md](./REPOSITORY_POLICY.md) — разграничение ролей главного репозитория и самостоятельных skill-репозиториев.
 - [ROADMAP.md](./ROADMAP.md) — план развития текущих и будущих VPN Skills.
-- [CONTRIBUTING.md](./CONTRIBUTING.md) — требования к структуре и включению новых Skills.
+- [CONTRIBUTING.md](./CONTRIBUTING.md) — требования к структуре и включению новых skills.
 - [network-fundamentals/](./network-fundamentals/) — встроенный фундаментальный skill по сетям.
 
 `NIDOX_SKILLS_INDEX.md` является главным индексом всех навыков репозитория.
