@@ -71,6 +71,6 @@ tcpdump -ni any port <port>
 
 ## Источники
 
-- [TCP schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/stream/tcp.ts)
-- [Raw form](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/pages/inbounds/form/transport/raw.tsx)
-- [Transport link generation](https://github.com/MHSanaei/3x-ui/blob/main/sub/subService.go)
+- [TCP schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/stream/tcp.ts)
+- [Raw form](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/pages/inbounds/form/transport/raw.tsx)
+- [Transport link generation](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/sub/subService.go)

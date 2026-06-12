@@ -76,8 +76,8 @@ sing-box:
 
 ## Источники
 
-- [3X-UI capability predicates](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/lib/xray/protocol-capabilities.ts)
-- [3X-UI VLESS form](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/pages/inbounds/form/protocols/vless.tsx)
-- [VLESS REALITY Vision fixture](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/test/golden/fixtures/inbound-full/vless-tcp-reality.json)
+- [3X-UI capability predicates](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/lib/xray/protocol-capabilities.ts)
+- [3X-UI VLESS form](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/pages/inbounds/form/protocols/vless.tsx)
+- [VLESS REALITY Vision fixture](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/test/golden/fixtures/inbound-full/vless-tcp-reality.json)
 - [sing-box VLESS flow](https://sing-box.sagernet.org/configuration/outbound/vless/)
 - [Podkop custom outbound](https://podkop.net/docs/own-outbound/)

@@ -71,7 +71,7 @@ openssl s_client -connect <host>:443 -servername <sni> -alpn h2 </dev/null
 
 ## Источники
 
-- [gRPC schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/stream/grpc.ts)
-- [3X-UI capability matrix](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/lib/xray/protocol-capabilities.ts)
-- [3X-UI share links](https://github.com/MHSanaei/3x-ui/blob/main/sub/subService.go)
+- [gRPC schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/stream/grpc.ts)
+- [3X-UI capability matrix](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/lib/xray/protocol-capabilities.ts)
+- [3X-UI share links](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/sub/subService.go)
 - [sing-box gRPC](https://sing-box.sagernet.org/configuration/shared/v2ray-transport/)

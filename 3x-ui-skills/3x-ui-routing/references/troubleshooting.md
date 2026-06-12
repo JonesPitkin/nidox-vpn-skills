@@ -53,12 +53,12 @@ curl -6 https://api64.ipify.org
 
 Повышать loglevel на короткий интервал и не публиковать логи без очистки UUID, domains и client IP. После теста вернуть обычный уровень.
 
-## TODO
+## UI Version Check
 
-TODO: если требуется точный UI walkthrough конкретной локализации 3X-UI, дополнительно проверить screenshots текущего release; Wiki не фиксирует каждую кнопку routing editor.
+Если требуется точный walkthrough, сверить установленную версию и текущий frontend source: Wiki не фиксирует каждую кнопку routing editor.
 
 ## Источники
 
 - [3X-UI Wiki FAQ](https://github.com/MHSanaei/3x-ui/wiki/Common-questions-and-problems)
-- [3X-UI routing source](https://github.com/MHSanaei/3x-ui/tree/main/frontend/src/pages/xray/routing)
+- [3X-UI routing source](https://github.com/MHSanaei/3x-ui/tree/v3.3.0/frontend/src/pages/xray/routing)
 - [Xray routing](https://xtls.github.io/en/config/routing.html)

@@ -45,7 +45,7 @@ journalctl -u x-ui -n 200 --no-pager | grep -i geosite
 
 ## Совместимость
 
-sing-box 1.12 удалил legacy geosite; использовать SRS/remote rule-set. Podkop использует собственные списки/rule-sets: серверный `geosite.dat` автоматически не переносится.
+sing-box 1.12 удалил legacy geosite database и rule fields; в 1.13 использовать SRS/remote/inline rule-set. Podkop использует собственные rule-sets: серверный `geosite.dat` автоматически не переносится.
 
 ## Источники
 

@@ -4,14 +4,14 @@
 
 > Русскоязычная база навыков для Codex по сетям, VPN-инфраструктуре, OpenWrt, Cloudflare, sing-box, 3x-ui, Podkop, Remnawave и homelab.
 
-![Release: v1.0.0](https://img.shields.io/badge/Release-v1.0.0-0A7B83?style=flat-square)
+![Release: v1.1.1](https://img.shields.io/badge/Release-v1.1.1-0A7B83?style=flat-square)
 ![License: MIT](https://img.shields.io/badge/License-MIT-F2C14E?style=flat-square)
 ![Language: Russian](https://img.shields.io/badge/Language-Russian-2563EB?style=flat-square)
 ![Status: Active Development](https://img.shields.io/badge/Status-Active_Development-2E8B57?style=flat-square)
 
 `nidox-vpn-skills` — мета-репозиторий и единая точка входа для NIDOX skill-пакетов, связанных с проектированием, публикацией, настройкой и сопровождением современной VPN-инфраструктуры.
 
-Current release: `v1.0.0` — `NIDOX VPN Skills Foundation`
+Current release: `v1.1.1` — синхронизация встроенного `3x-ui-skills v1.1.0`.
 
 ## Что входит в репозиторий
 
@@ -62,7 +62,7 @@ flowchart TD
 | `cloudflare-skills` | Публикация, DNS, TLS, Tunnel | In Progress | Расширение edge и integration-сценариев |
 | `openwrt-cudy-wr3000s-skills` | OpenWrt и Cudy WR3000S | In Progress | Углубление install/recovery/routing-практик |
 | `sing-box-skills` | Транспорты, DNS, маршрутизация | In Progress | Расширение routing и transport matrix |
-| `3x-ui-skills` | Xray/VLESS panel operations | Stable | Базовый пакет после `v1.0.0` |
+| `3x-ui-skills` | Xray/VLESS panel operations | Stable | Синхронизирован с standalone release `v1.1.0` |
 | `remnawave-skills` | Современная VPN-панель | In Progress | Развитие production- и migration-сценариев |
 | `podkop-skills` | OpenWrt routing и Podkop | Stable | Базовый пакет после `v1.0.0` |
 | `censorship-resistant-networking` | Архитектурный слой устойчивых сетей | Incubating | Концептуальный пакет для `v1.1+` |
@@ -89,6 +89,7 @@ flowchart TD
 
 - [NIDOX_SKILLS_INDEX.md](./NIDOX_SKILLS_INDEX.md) — главный индекс всех навыков репозитория.
 - [CHANGELOG.md](./CHANGELOG.md) — история релизов и изменений репозитория.
+- [VERSION_MATRIX.md](./VERSION_MATRIX.md) — версии встроенных skill-пакетов и количество Skills.
 - [SKILL_INDEX.md](./SKILL_INDEX.md) — центральный каталог VPN Skills со статусами и требованиями к аудиту.
 - [AUDIT_POLICY.md](./AUDIT_POLICY.md) — правила обязательного аудита skills внутри `nidox-vpn-skills`.
 - [REPOSITORY_POLICY.md](./REPOSITORY_POLICY.md) — разграничение ролей главного репозитория и самостоятельных skill-репозиториев.
@@ -107,6 +108,8 @@ nidox-vpn-skills/
 ├── AUDIT_POLICY.md
 ├── REPOSITORY_POLICY.md
 ├── SKILL_INDEX.md
+├── SKILL_DEPENDENCIES.md
+├── VERSION_MATRIX.md
 ├── ROADMAP.md
 ├── CONTRIBUTING.md
 ├── LICENSE

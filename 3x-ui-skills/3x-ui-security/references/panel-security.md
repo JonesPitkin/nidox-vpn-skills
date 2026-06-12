@@ -1,6 +1,17 @@
 # Защита панели
 
+> Проверено по 3X-UI `v3.3.0`.
+
 ## Модель доступа
+
+Встроенные Swagger UI и OpenAPI находятся в panel surface. API groups `setting` и `xray` с `v3.3.0` расположены под `/panel/api`; старые reverse-proxy allowlists должны быть пересмотрены.
+
+При использовании API token:
+
+- разрешать panel/API только из admin network, VPN, SSH tunnel или Access policy;
+- не сохранять token в URL/query;
+- отзывать token после автоматизации;
+- логировать endpoint/status без Authorization header.
 
 Предпочтительный порядок:
 
@@ -57,4 +68,4 @@ curl -I http://127.0.0.1:<panel-port>/<path>/
 
 - [3X-UI Wiki FAQ: brute force and restricted access](https://github.com/MHSanaei/3x-ui/wiki/Common-questions-and-problems)
 - [3X-UI Wiki: reverse proxy](https://github.com/MHSanaei/3x-ui/wiki/Configuration)
-- [x-ui management script](https://github.com/MHSanaei/3x-ui/blob/main/x-ui.sh)
+- [x-ui management script](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/x-ui.sh)

@@ -1,5 +1,7 @@
 # Установка 3X-UI
 
+> Проверено по 3X-UI `v3.3.0`.
+
 ## Содержание
 
 1. Предварительная проверка
@@ -230,9 +232,17 @@ docker inspect 3x-ui --format '{{json .Mounts}}'
 4. Fail2ban/IP-limit требует firewall capabilities; Docker Fail2ban требует `NET_ADMIN`, `NET_RAW`.
 5. BBR меняет kernel/network settings и в unprivileged LXC обычно зависит от host.
 
-TODO: официальный Wiki и README не содержат отдельной LXC-инструкции. Перед рекомендацией privileged mode, nesting, AppArmor или host sysctl изучить официальную документацию конкретной платформы LXC/Proxmox и политику хостинга.
+Ограничение источников: официальный Wiki и README не содержат отдельной LXC-инструкции. Перед рекомендацией privileged mode, nesting, AppArmor или host sysctl изучить официальную документацию конкретной платформы LXC/Proxmox и политику хостинга.
 
 ## 7. Проверка результата
+
+Дополнительно проверить:
+
+- `/panel/api/openapi.json` доступен через защищённую панель;
+- API token создаётся и отзывается;
+- при MTProto inbound запускается managed `mtg`;
+- custom subscription template path пуст или указывает на доверенный каталог;
+- Docker Fail2Ban имеет `NET_ADMIN` и `NET_RAW`.
 
 Проверить:
 
@@ -278,8 +288,8 @@ ss -ltnp | grep ":<port> "
 
 - [Wiki: Installation](https://github.com/MHSanaei/3x-ui/wiki/Installation)
 - [Wiki: Home / supported OS and architectures](https://github.com/MHSanaei/3x-ui/wiki)
-- [README: Quick Start, platforms, databases](https://github.com/MHSanaei/3x-ui/blob/main/README.md)
-- [Official install.sh](https://github.com/MHSanaei/3x-ui/blob/main/install.sh)
-- [Official docker-compose.yml](https://github.com/MHSanaei/3x-ui/blob/main/docker-compose.yml)
-- [Official Dockerfile](https://github.com/MHSanaei/3x-ui/blob/main/Dockerfile)
-- [Official DockerEntrypoint.sh](https://github.com/MHSanaei/3x-ui/blob/main/DockerEntrypoint.sh)
+- [README: Quick Start, platforms, databases](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/README.md)
+- [Official install.sh](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/install.sh)
+- [Official docker-compose.yml](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/docker-compose.yml)
+- [Official Dockerfile](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/Dockerfile)
+- [Official DockerEntrypoint.sh](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/DockerEntrypoint.sh)

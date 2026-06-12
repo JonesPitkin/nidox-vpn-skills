@@ -66,6 +66,6 @@ journalctl -u x-ui -n 200 --no-pager | grep -iE 'dokodemo|tunnel|failed|error'
 
 ## Источники
 
-- [3X-UI Tunnel schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/inbound/tunnel.ts)
+- [3X-UI Tunnel schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/inbound/tunnel.ts)
 - [Xray Dokodemo-door](https://xtls.github.io/en/config/inbounds/dokodemo.html)
 - [3X-UI Wiki FAQ](https://github.com/MHSanaei/3x-ui/wiki/Common-questions-and-problems)

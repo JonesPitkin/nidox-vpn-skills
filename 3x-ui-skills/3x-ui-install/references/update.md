@@ -1,5 +1,7 @@
 # Обновление и миграция
 
+> Проверено по 3X-UI `v3.3.0`.
+
 ## Содержание
 
 1. Подготовка
@@ -106,7 +108,7 @@ docker pull ghcr.io/mhsanaei/3x-ui:latest
 
 Не выполнять `docker system prune -a` как обязательный шаг обновления. Он удаляет неиспользуемые images/cache и может затронуть другие workloads.
 
-Для воспроизводимости можно pin image tag вместо `latest`, но актуальный поддерживаемый tag сначала сверять в Releases. TODO: Wiki показывает `latest` и не описывает официальный pin/rollback policy.
+Для воспроизводимости можно pin image tag вместо `latest`, но актуальный поддерживаемый tag сначала сверять в Releases. Официальный Wiki показывает `latest` и не определяет отдельную политику pin/rollback, поэтому rollback всегда требует собственного pre-update backup и проверки совместимости schema.
 
 ## 4. Перенос на новый сервер
 
@@ -135,6 +137,8 @@ Wiki FAQ советует после переноса DB обновить panel,
 Переносить compose/env и persistent directories `db`, `cert`; для PostgreSQL также `pgdata` или логический dump. На destination сначала не публиковать panel наружу, пока credentials/TLS не проверены.
 
 ## 5. SQLite и PostgreSQL
+
+CLI `x-ui migrate-db` поддерживает SQLite → PostgreSQL через `--dsn`, `.db` → portable `.dump` через `--dump`, и `.dump` → новый SQLite database через `--restore`/`--out`. Не восстанавливать поверх существующего destination file.
 
 ### SQLite → PostgreSQL
 
@@ -212,8 +216,7 @@ Native:
 
 Официальная Wiki показывает legacy installation, но предупреждает, что она не рекомендуется. Автоматическая обратная совместимость DB не обещана.
 
-TODO: проверить, исправил ли upstream расхождение README `x-ui migrate-db` и
-dispatch в `x-ui.sh` после зафиксированного commit.
+Ограничение источников: перед использованием `x-ui migrate-db` сверить README и фактический dispatch в установленном `x-ui.sh`; документация и release artifact могут обновляться независимо.
 
 Docker:
 
@@ -227,6 +230,10 @@ docker compose up -d
 
 ## 7. Ошибки
 
+- automation после `v3.3.0` продолжает вызывать `/panel/setting` или `/panel/xray`;
+- после migration не перенесены новые top-level models, включая outbound subscriptions;
+- MTProto sidecar остался orphaned после rollback.
+
 **Не скачивается GitHub:** проверить DNS/IPv4, использовать installer/update retry по IPv4; не использовать случайные mirrors.
 
 **После update panel не открывается:** `x-ui status`, `x-ui settings`, `journalctl`; Wiki рекомендует `Reset Settings` при Xray/panel SSL issue, но сначала записать текущие settings и backup.
@@ -237,10 +244,10 @@ docker compose up -d
 
 ## 8. Источники
 
-- [README: database migration](https://github.com/MHSanaei/3x-ui/blob/main/README.md#database-options)
-- [Official update.sh](https://github.com/MHSanaei/3x-ui/blob/main/update.sh)
-- [Official x-ui.sh](https://github.com/MHSanaei/3x-ui/blob/main/x-ui.sh)
+- [README: database migration](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/README.md#database-options)
+- [Official update.sh](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/update.sh)
+- [Official x-ui.sh](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/x-ui.sh)
 - [Wiki: Docker update and legacy install](https://github.com/MHSanaei/3x-ui/wiki/Installation)
 - [Wiki: Common Questions & Problems](https://github.com/MHSanaei/3x-ui/wiki/Common-questions-and-problems)
-- [Database migration implementation](https://github.com/MHSanaei/3x-ui/blob/main/database/migrate_data.go)
-- [SQLite dump implementation](https://github.com/MHSanaei/3x-ui/blob/main/database/dump_sqlite.go)
+- [Database migration implementation](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/database/migrate_data.go)
+- [SQLite dump implementation](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/database/dump_sqlite.go)

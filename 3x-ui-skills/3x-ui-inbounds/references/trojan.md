@@ -69,7 +69,7 @@ journalctl -u x-ui -n 200 --no-pager | grep -iE 'trojan|tls|fallback'
 
 ## Источники
 
-- [Trojan schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/inbound/trojan.ts)
-- [Trojan WS TLS fixture](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/test/golden/fixtures/inbound-full/trojan-ws-tls.json)
-- [3X-UI Trojan link generator](https://github.com/MHSanaei/3x-ui/blob/main/sub/subService.go)
+- [Trojan schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/inbound/trojan.ts)
+- [Trojan WS TLS fixture](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/test/golden/fixtures/inbound-full/trojan-ws-tls.json)
+- [3X-UI Trojan link generator](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/sub/subService.go)
 - [Podkop sections](https://podkop.net/docs/sections/)

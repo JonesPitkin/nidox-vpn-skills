@@ -52,4 +52,4 @@ systemctl reload ssh
 - [OpenSSH sshd_config](https://man.openbsd.org/sshd_config)
 - [3X-UI Wiki FAQ: SSH port](https://github.com/MHSanaei/3x-ui/wiki/Common-questions-and-problems)
 
-TODO: distro-specific drop-in precedence проверять по установленному Ubuntu/Debian OpenSSH package, а не переносить путь между версиями.
+Ограничение источников: distro-specific drop-in precedence проверять по установленному Ubuntu/Debian OpenSSH package, а не переносить путь между версиями.

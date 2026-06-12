@@ -44,5 +44,5 @@ journalctl -u x-ui -n 200 --no-pager | grep -iE 'grpc|http2|transport|error'
 ## Источники
 
 - [Cloudflare gRPC](https://developers.cloudflare.com/network/grpc-connections/)
-- [3X-UI gRPC inbound source](https://github.com/MHSanaei/3x-ui/tree/main/frontend/src/pages/inbounds)
+- [3X-UI gRPC inbound source](https://github.com/MHSanaei/3x-ui/tree/v3.3.0/frontend/src/pages/inbounds)
 - [Xray gRPC transport](https://xtls.github.io/en/config/transports/grpc.html)

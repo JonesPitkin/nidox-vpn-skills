@@ -78,8 +78,8 @@ ss -lntup
 
 ## Источники
 
-- [3X-UI HTTP schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/inbound/http.ts)
-- [3X-UI Mixed schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/inbound/mixed.ts)
+- [3X-UI HTTP schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/inbound/http.ts)
+- [3X-UI Mixed schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/inbound/mixed.ts)
 - [Xray HTTP inbound](https://xtls.github.io/en/config/inbounds/http.html)
 - [Xray SOCKS inbound](https://xtls.github.io/en/config/inbounds/socks.html)
 - [Podkop sections](https://podkop.net/docs/sections/)

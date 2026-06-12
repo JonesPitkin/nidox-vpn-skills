@@ -54,6 +54,6 @@ Balancer выбирает один из outbounds по selector. Текущая 
 
 ## Источники
 
-- [3X-UI balancer schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/routing.ts)
-- [3X-UI balancer fixtures](https://github.com/MHSanaei/3x-ui/tree/main/frontend/src/test/golden/fixtures/balancer)
+- [3X-UI balancer schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/routing.ts)
+- [3X-UI balancer fixtures](https://github.com/MHSanaei/3x-ui/tree/v3.3.0/frontend/src/test/golden/fixtures/balancer)
 - [Xray routing balancers](https://xtls.github.io/en/config/routing.html)

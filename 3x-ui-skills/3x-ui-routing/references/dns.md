@@ -57,7 +57,7 @@ DNS schema sing-box отличается от Xray. Переносить policy 
 
 ## Источники
 
-- [3X-UI DNS schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/dns.ts)
+- [3X-UI DNS schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/dns.ts)
 - [Xray DNS](https://xtls.github.io/en/config/dns.html)
 - [sing-box DNS](https://sing-box.sagernet.org/configuration/dns/)
 - [Podkop DNS](https://podkop.net/docs/dns/)

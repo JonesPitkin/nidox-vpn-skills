@@ -188,8 +188,8 @@ nc -uvz SERVER 443
 ## Источники
 
 - [3X-UI Wiki FAQ](https://github.com/MHSanaei/3x-ui/wiki/Common-questions-and-problems)
-- [3X-UI protocol capabilities](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/lib/xray/protocol-capabilities.ts)
-- [3X-UI link generator](https://github.com/MHSanaei/3x-ui/blob/main/sub/subService.go)
+- [3X-UI protocol capabilities](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/lib/xray/protocol-capabilities.ts)
+- [3X-UI link generator](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/sub/subService.go)
 - [v2rayNG](https://github.com/2dust/v2rayNG)
 - [sing-box VLESS](https://sing-box.sagernet.org/configuration/outbound/vless/)
 - [sing-box transports](https://sing-box.sagernet.org/configuration/shared/v2ray-transport/)

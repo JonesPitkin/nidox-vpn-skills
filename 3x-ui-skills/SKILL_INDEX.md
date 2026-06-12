@@ -2,7 +2,7 @@
 
 ## Entry Skill
 
-- [`3x-ui`](3x-ui/SKILL.md): repository router for installation, operations, routing, security, and Cloudflare decisions
+- [`3x-ui`](3x-ui/SKILL.md): repository router for installation, operations, API, routing, security, and Cloudflare decisions
 
 ## Operations
 
@@ -11,8 +11,8 @@
 
 ## Traffic Design
 
-- [`3x-ui-inbounds`](3x-ui-inbounds/SKILL.md): protocol, transport, and client compatibility
-- [`3x-ui-routing`](3x-ui-routing/SKILL.md): Xray routing, DNS, balancers, and policy
+- [`3x-ui-inbounds`](3x-ui-inbounds/SKILL.md): protocol, transport, MTProto, and client compatibility
+- [`3x-ui-routing`](3x-ui-routing/SKILL.md): Xray routing, DNS, WARP, subscription outbounds, balancers, and policy
 
 ## Hardening
 

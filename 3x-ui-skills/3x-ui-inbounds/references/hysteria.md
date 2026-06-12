@@ -1,8 +1,12 @@
 # Hysteria и Hysteria2
 
+> Проверено по 3X-UI `v3.3.0`, Xray Hysteria transport и official Hysteria `v2.9.2`.
+
 ## Описание
 
 Hysteria2 — прокси-протокол поверх QUIC/UDP с обязательным TLS. Он рассчитан на сети с потерями, высокой задержкой и нестабильной пропускной способностью. Hysteria v1 — предыдущая, несовместимая версия протокола.
+
+Различать Xray Hysteria transport, который использует 3X-UI, и standalone official Hysteria application. Xray-форма содержит auth, `udpIdleTimeout` и HTTP/3 masquerade; расширенные поля official app нельзя переносить в неё без поддержки schema.
 
 В актуальном 3X-UI обе версии представлены внутренним protocol id `hysteria`, однако:
 
@@ -174,7 +178,7 @@ ports:
 
 ### Port hopping
 
-В 3X-UI port hopping хранится в FinalMask QUIC parameters и попадает в share link как `mport`. На стороне sing-box соответствуют `server_ports` и `hop_interval`.
+Port hopping документирован official Hysteria и sing-box Hysteria2 outbound. В текущей Xray Hysteria stream schema 3X-UI отдельного поля port hopping нет; использовать только механизм, который фактически генерирует установленная версия панели/client.
 
 Перед включением:
 
@@ -184,7 +188,20 @@ ports:
 4. Проверить, что клиент импортировал range.
 5. Проверить несколько переподключений.
 
-Не предполагать, что встроенный Linux port-range механизм официального Hysteria автоматически применяется Xray/3X-UI. Использовать механизм FinalMask/Xray, показанный панелью, и проверять созданные nftables/iptables rules.
+Не предполагать, что Linux redirect или official Hysteria port-range автоматически применяется Xray/3X-UI.
+
+## Hysteria 2.9.2
+
+`v2.9.2` содержит важные security fixes: UDP ACL bypass, trailing-dot ACL bypass, потенциальный OOM при HTTP sniff, SOCKS5 UDP destination и DoH fixes.
+
+Standalone official Hysteria также поддерживает:
+
+- экспериментальный Gecko obfuscation для фрагментации QUIC handshake;
+- BBR/Reno congestion control и BBR profiles;
+- QUIC idle, keepalive и PMTU settings;
+- Realms/NAT traversal.
+
+Эти возможности требуют поддержки на обеих сторонах и не означают автоматическую поддержку в Xray/3X-UI.
 
 ## Сертификаты
 
@@ -313,9 +330,9 @@ sing-box run -c config.json
 ## Источники
 
 - [3X-UI README](https://github.com/MHSanaei/3x-ui)
-- [3X-UI Hysteria inbound schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/inbound/hysteria.ts)
-- [3X-UI Hysteria form](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/pages/inbounds/form/protocols/hysteria.tsx)
-- [3X-UI share-link generator](https://github.com/MHSanaei/3x-ui/blob/main/sub/subService.go)
+- [3X-UI Hysteria inbound schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/inbound/hysteria.ts)
+- [3X-UI Hysteria form](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/pages/inbounds/form/protocols/hysteria.tsx)
+- [3X-UI share-link generator](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/sub/subService.go)
 - [Xray Hysteria inbound](https://xtls.github.io/en/config/inbounds/hysteria.html)
 - [Xray Hysteria transport](https://xtls.github.io/en/config/transports/hysteria.html)
 - [sing-box Hysteria2 outbound](https://sing-box.sagernet.org/configuration/outbound/hysteria2/)
@@ -324,3 +341,4 @@ sing-box run -c config.json
 - [Hysteria2 port hopping](https://v2.hysteria.network/docs/advanced/Port-Hopping/)
 - [Podkop sections](https://podkop.net/docs/sections/)
 - [Podkop diagnostics](https://podkop.net/docs/diagnostics/)
+- [Hysteria v2.9.2 release](https://github.com/apernet/hysteria/releases/tag/app/v2.9.2)

@@ -25,6 +25,8 @@ Cloudflare завершает edge TLS и проксирует HTTP(S) к origin
 
 ## Tunnel
 
+Cloudflare Tunnel устанавливает outbound-only connections от `cloudflared` к Cloudflare и подходит для panel/subscription HTTP services. Для публичного arbitrary TCP/UDP proxy нужен иной продукт/архитектура; standard Tunnel hostname не является прозрачной заменой REALITY или Hysteria2 listener.
+
 `cloudflared` устанавливает outbound connection из origin в Cloudflare. Подходит для HTTP panel/subscription без public origin port. Arbitrary non-HTTP access требует отдельного Cloudflare Access/WARP/client-side design; не считать Tunnel прозрачной заменой Xray TCP/UDP listener.
 
 ## Выбор
@@ -49,4 +51,5 @@ VLESS/Trojan определяют application protocol, а Cloudflare видит
 - [Cloudflare DNS proxy status](https://developers.cloudflare.com/dns/proxy-status/)
 - [Cloudflare network ports](https://developers.cloudflare.com/fundamentals/reference/network-ports/)
 - [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/)
+- [Cloudflare Spectrum](https://developers.cloudflare.com/spectrum/)
 - [3X-UI Wiki Configuration](https://github.com/MHSanaei/3x-ui/wiki/Configuration)

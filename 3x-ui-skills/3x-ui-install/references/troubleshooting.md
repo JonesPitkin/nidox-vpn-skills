@@ -239,7 +239,7 @@ iptables -L -n 2>&1 | sed -n '1,40p'
 - не менять host LXC config без согласования;
 - отделить работу панели/Xray от optional IP-limit/BBR.
 
-TODO: 3X-UI upstream не документирует LXC-specific requirements. Для Proxmox/LXC capability errors обращаться к официальной документации платформы и провайдера.
+Ограничение источников: 3X-UI upstream не документирует LXC-specific requirements. Для Proxmox/LXC capability errors обращаться к официальной документации платформы и провайдера.
 
 ## 9. Сбор отчета
 
@@ -264,7 +264,7 @@ free -h
 - [Wiki: Common Questions & Problems](https://github.com/MHSanaei/3x-ui/wiki/Common-questions-and-problems)
 - [Wiki: Installation](https://github.com/MHSanaei/3x-ui/wiki/Installation)
 - [Wiki: Configuration](https://github.com/MHSanaei/3x-ui/wiki/Configuration)
-- [Official x-ui.sh](https://github.com/MHSanaei/3x-ui/blob/main/x-ui.sh)
-- [Official install.sh](https://github.com/MHSanaei/3x-ui/blob/main/install.sh)
-- [Official update.sh](https://github.com/MHSanaei/3x-ui/blob/main/update.sh)
-- [Official DockerEntrypoint.sh](https://github.com/MHSanaei/3x-ui/blob/main/DockerEntrypoint.sh)
+- [Official x-ui.sh](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/x-ui.sh)
+- [Official install.sh](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/install.sh)
+- [Official update.sh](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/update.sh)
+- [Official DockerEntrypoint.sh](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/DockerEntrypoint.sh)

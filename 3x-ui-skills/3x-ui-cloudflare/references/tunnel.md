@@ -46,6 +46,6 @@ curl -I https://panel.example.com/<path>/
 
 ## Источники
 
-- [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/)
-- [Tunnel routing to services](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/routing-to-tunnel/)
+- [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/)
+- [Tunnel routing to services](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/routing-to-tunnel/)
 - [3X-UI reverse proxy guidance](https://github.com/MHSanaei/3x-ui/wiki/Configuration)

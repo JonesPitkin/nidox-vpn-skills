@@ -46,4 +46,4 @@ curl --resolve <origin-host>:443:<origin-ip> https://<origin-host>/<path> -I
 - [Cloudflare Origin Rules](https://developers.cloudflare.com/rules/origin-rules/)
 - [Origin Rules parameters](https://developers.cloudflare.com/rules/origin-rules/features/)
 
-TODO: перед применением проверить доступность требуемого action на текущем Cloudflare plan.
+Перед применением проверить доступность требуемого action на текущем Cloudflare plan; plan availability изменяется.

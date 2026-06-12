@@ -1,5 +1,7 @@
 # SplitHTTP / XHTTP
 
+> Проверено по 3X-UI `v3.3.0` и bundled Xray-core `v26.6.1`.
+
 ## Описание
 
 В актуальном 3X-UI transport называется `XHTTP`, wire field — `network: "xhttp"`, settings — `xhttpSettings`. В исходниках он описан как modern `SplitHTTPConfig`; старые инструкции могут называть его SplitHTTP.
@@ -49,6 +51,17 @@ Mode fields:
 - `stream-one`: single stream behavior;
 - `auto`: core decides, но некоторые client versions требовали explicit mode.
 
+Расширенные поля `v3.3.0`:
+
+- padding obfuscation: key, header, placement и method;
+- `sessionPlacement`/`sessionKey` и `seqPlacement`/`seqKey`;
+- `uplinkDataPlacement`/`uplinkDataKey`, `uplinkHTTPMethod`;
+- `serverMaxHeaderBytes`, `noSSEHeader`;
+- `scMaxBufferedPosts`, `scMaxEachPostBytes`, `scStreamUpServerSecs`;
+- outbound/share-link fields `scMinPostsIntervalMs`, `uplinkChunkSize`, `noGRPCHeader`, `xmux`.
+
+Не включать все tuning-поля сразу. Начать с host/path/mode.
+
 Security:
 
 - direct: REALITY;
@@ -59,7 +72,7 @@ Security:
 
 - v2rayNG: VLESS+XHTTP подтверждается upstream issues, но behavior менялся между core versions; обновлять и явно сверять mode.
 - Shadowrocket: release notes 2026 подтверждают XHTTP fixes/options; использовать текущую версию и минимальные fields.
-- sing-box: официальная transport schema не перечисляет XHTTP. TODO: повторно проверить при обновлении sing-box.
+- sing-box `1.13.13`: официальная transport schema не перечисляет XHTTP.
 - Podkop: URL/custom outbound основан на sing-box; XHTTP не рекомендовать без подтвержденного parser/core support.
 
 ## Типовые ошибки
@@ -70,6 +83,7 @@ Security:
 - upload работает плохо, download работает;
 - extra JSON fields потеряны subscription converter;
 - path/padding/session placement mismatch.
+- reverse proxy понижает HTTP/2 или буферизует packet-up upload.
 
 ## Диагностика
 
@@ -83,10 +97,11 @@ Security:
 
 ## Источники
 
-- [XHTTP schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/stream/xhttp.ts)
-- [XHTTP form](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/pages/inbounds/form/transport/xhttp.tsx)
-- [3X-UI URL generator](https://github.com/MHSanaei/3x-ui/blob/main/sub/subService.go)
-- [3X-UI Clash generator](https://github.com/MHSanaei/3x-ui/blob/main/sub/subClashService.go)
+- [XHTTP schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/stream/xhttp.ts)
+- [XHTTP form](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/pages/inbounds/form/transport/xhttp.tsx)
+- [3X-UI URL generator](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/sub/subService.go)
+- [3X-UI Clash generator](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/sub/subClashService.go)
 - [v2rayNG repository](https://github.com/2dust/v2rayNG)
 - [Shadowrocket App Store](https://apps.apple.com/us/app/shadowrocket/id932747118)
 - [sing-box transports](https://sing-box.sagernet.org/configuration/shared/v2ray-transport/)
+- [Xray XHTTP discussion](https://github.com/XTLS/Xray-core/discussions/4113)

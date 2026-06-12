@@ -114,7 +114,7 @@ journalctl -u x-ui -n 200 --no-pager | grep -iE 'vless|inbound|failed|error'
 
 ## Источники
 
-- [3X-UI VLESS schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/inbound/vless.ts)
-- [3X-UI VLESS REALITY fixture](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/test/golden/fixtures/inbound-full/vless-tcp-reality.json)
-- [3X-UI link generator](https://github.com/MHSanaei/3x-ui/blob/main/sub/subService.go)
+- [3X-UI VLESS schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/inbound/vless.ts)
+- [3X-UI VLESS REALITY fixture](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/test/golden/fixtures/inbound-full/vless-tcp-reality.json)
+- [3X-UI link generator](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/sub/subService.go)
 - [sing-box VLESS](https://sing-box.sagernet.org/configuration/outbound/vless/)

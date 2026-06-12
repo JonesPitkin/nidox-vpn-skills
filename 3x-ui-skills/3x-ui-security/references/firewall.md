@@ -58,5 +58,5 @@ nft list ruleset
 ## Источники
 
 - [3X-UI Wiki FAQ: firewall](https://github.com/MHSanaei/3x-ui/wiki/Common-questions-and-problems)
-- [x-ui firewall management](https://github.com/MHSanaei/3x-ui/blob/main/x-ui.sh)
+- [x-ui firewall management](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/x-ui.sh)
 - [Ubuntu UFW](https://documentation.ubuntu.com/server/how-to/security/firewalls/)

@@ -1,5 +1,7 @@
 # REALITY
 
+> Проверено по 3X-UI `v3.3.0` и bundled Xray-core `v26.6.1`.
+
 ## Описание
 
 REALITY — Xray security layer, использующий X25519 keypair, SNI/target, short ID и uTLS fingerprint. Он предназначен для direct client-to-Xray connection и не требует собственного публичного certificate на inbound.
@@ -27,7 +29,7 @@ REALITY — Xray security layer, использующий X25519 keypair, SNI/ta
 
 ## Требования
 
-REALITY разрешен для VLESS/Trojan с `tcp`, `grpc`, `xhttp` и legacy `http`. Для WS и HTTPUpgrade форма его не предлагает.
+REALITY разрешен для VLESS/Trojan с Raw/TCP, gRPC и XHTTP. Для WS и HTTPUpgrade форма его не предлагает. Старое имя server-side поля `dest` заменено на `target` и остаётся alias.
 
 Поля:
 
@@ -38,7 +40,10 @@ REALITY разрешен для VLESS/Trojan с `tcp`, `grpc`, `xhttp` и legacy
 - `fingerprint`, default `chrome`;
 - `spiderX`, default `/`;
 - optional `minClientVer`, `maxClientVer`, `maxTimediff`;
-- optional ML-DSA fields.
+- optional `mldsa65Seed`/`mldsa65Verify`;
+- optional fallback upload/download rate limits.
+
+Если target поддерживает X25519MLKEM768, актуальный Xray использует post-quantum key exchange автоматически. Проверять через `xray tls ping <target>`.
 
 ## Настройка в панели
 
@@ -60,6 +65,8 @@ Wiki рекомендует TLS 1.3/H2-capable SNI и ссылается на Re
 ```sh
 openssl s_client -connect <target>:443 -servername <sni> </dev/null
 ```
+
+Неаутентифицированный трафик пересылается к `target`. Target за публичным CDN может превратить VPS в нежелательный port forward после сканирования. Предпочитать target в том же ASN. Fallback rate limiting применять только после оценки: он создаёт собственный fingerprint.
 
 ## Настройка клиента
 
@@ -121,7 +128,8 @@ journalctl -u x-ui -n 250 --no-pager | grep -iE 'reality|tls|handshake|failed'
 ## Источники
 
 - [Wiki FAQ: recommended REALITY settings](https://github.com/MHSanaei/3x-ui/wiki/Common-questions-and-problems#6-what-settings-do-you-recommend-for-reality)
-- [3X-UI REALITY schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/security/reality.ts)
-- [3X-UI REALITY form](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/pages/inbounds/form/security/reality.tsx)
-- [3X-UI golden fixture](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/test/golden/fixtures/inbound-full/vless-tcp-reality.json)
+- [3X-UI REALITY schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/security/reality.ts)
+- [3X-UI REALITY form](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/pages/inbounds/form/security/reality.tsx)
+- [3X-UI golden fixture](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/test/golden/fixtures/inbound-full/vless-tcp-reality.json)
 - [Podkop custom outbound](https://podkop.net/docs/own-outbound/)
+- [Xray REALITY](https://xtls.github.io/en/config/transports/reality.html)

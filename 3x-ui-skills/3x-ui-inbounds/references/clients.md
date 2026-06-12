@@ -26,7 +26,7 @@
 | Trojan | Да | Password + TLS/REALITY |
 | Shadowsocks | Да | Проверять cipher/method |
 | Hysteria2 | Да | QUIC/UDP + TLS |
-| WireGuard | Да, WireGuard config | VPN peer, не proxy URL |
+| WireGuard | Да, через endpoint в 1.13 | VPN peer, не proxy URL |
 | HTTP | Да, HTTP proxy settings | Обычно private/local use |
 | SOCKS/Mixed | Да, SOCKS/HTTP settings | Podkop поддерживает SOCKS4/5 |
 | Tunnel/Dokodemo-door | Нет отдельного profile | Server-side forwarding |
@@ -37,7 +37,8 @@
 - Native outbounds: VLESS, VMess, Trojan, Shadowsocks, Hysteria2, HTTP, SOCKS.
 - VLESS поддерживает `xtls-rprx-vision`.
 - V2Ray transports: HTTP, WebSocket, QUIC, gRPC и HTTPUpgrade согласно текущей schema; XHTTP и mKCP в ней не заявлены.
-- WireGuard schema/version проверять отдельно: sing-box меняет legacy outbound APIs.
+- В sing-box `1.13` использовать WireGuard endpoint; legacy outbound удалён.
+- Legacy inbound sniff fields удалены; sniffing задавать route action.
 - Перед запуском выполнять `sing-box check -c config.json`.
 
 ## Podkop

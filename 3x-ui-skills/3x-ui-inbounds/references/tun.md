@@ -69,6 +69,6 @@ journalctl -u x-ui -n 250 --no-pager | grep -iE 'tun|route|permission|failed|err
 
 ## Источники
 
-- [3X-UI TUN schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/inbound/tun.ts)
-- [3X-UI TUN form](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/pages/inbounds/form/protocols/tun.tsx)
+- [3X-UI TUN schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/inbound/tun.ts)
+- [3X-UI TUN form](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/pages/inbounds/form/protocols/tun.tsx)
 - [Xray TUN inbound](https://xtls.github.io/en/config/inbounds/tun.html)

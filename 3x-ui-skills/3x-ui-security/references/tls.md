@@ -49,5 +49,5 @@ curl -I https://panel.example.com/<path>/
 ## Источники
 
 - [3X-UI Wiki: SSL](https://github.com/MHSanaei/3x-ui/wiki/Configuration)
-- [3X-UI certificate flow](https://github.com/MHSanaei/3x-ui/blob/main/x-ui.sh)
+- [3X-UI certificate flow](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/x-ui.sh)
 - [Cloudflare Origin CA](https://developers.cloudflare.com/ssl/origin-configuration/origin-ca/)

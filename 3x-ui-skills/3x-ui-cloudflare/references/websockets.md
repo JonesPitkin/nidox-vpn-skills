@@ -50,4 +50,4 @@ curl -i --http1.1 \
 
 - [Cloudflare WebSockets](https://developers.cloudflare.com/network/websockets/)
 - [3X-UI Wiki: reverse proxy/WebSocket examples](https://github.com/MHSanaei/3x-ui/wiki/Configuration)
-- [3X-UI WS schema](https://github.com/MHSanaei/3x-ui/tree/main/frontend/src/schemas)
+- [3X-UI WS schema](https://github.com/MHSanaei/3x-ui/tree/v3.3.0/frontend/src/schemas)

@@ -67,6 +67,6 @@ v2rayNG/Shadowrocket: обновить до версии с HTTPUpgrade и пр�
 
 ## Источники
 
-- [HTTPUpgrade schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/stream/httpupgrade.ts)
-- [HTTPUpgrade form](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/pages/inbounds/form/transport/httpupgrade.tsx)
+- [HTTPUpgrade schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/stream/httpupgrade.ts)
+- [HTTPUpgrade form](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/pages/inbounds/form/transport/httpupgrade.tsx)
 - [sing-box HTTPUpgrade](https://sing-box.sagernet.org/configuration/shared/v2ray-transport/)

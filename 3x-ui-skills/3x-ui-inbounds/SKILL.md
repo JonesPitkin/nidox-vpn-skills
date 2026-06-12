@@ -1,6 +1,6 @@
 ---
 name: 3x-ui-inbounds
-description: "Проектировать, создавать, проверять и диагностировать все inbounds актуального 3X-UI: VLESS, VMess, Trojan, Shadowsocks, WireGuard, Hysteria2, HTTP, SOCKS/Mixed, Tunnel/Dokodemo-door и TUN; security REALITY/XTLS Vision; transports TCP/Raw, mKCP, WebSocket, gRPC, HTTPUpgrade и XHTTP/SplitHTTP. Использовать при выборе устойчивой к блокировкам схемы, настройке server/client полей, UDP/QUIC, сертификатов, прозрачного проксирования, генерации ссылок и проверке совместимости с sing-box, v2rayNG, Shadowrocket и Podkop."
+description: "Проектировать, создавать, проверять и диагностировать inbounds актуального 3X-UI: VLESS, VMess, Trojan, Shadowsocks, WireGuard, Hysteria2, MTProto FakeTLS, HTTP, SOCKS/Mixed, Tunnel/Dokodemo-door и TUN; REALITY/XTLS Vision; TCP/Raw, mKCP, WebSocket, gRPC, HTTPUpgrade и XHTTP. Использовать при настройке server/client полей, UDP/QUIC, сертификатов, mtg sidecar, share links и совместимости с Xray, sing-box, v2rayNG, Shadowrocket и Podkop."
 ---
 
 # 3X-UI Inbounds
@@ -20,6 +20,7 @@ description: "Проектировать, создавать, проверять
    - универсальный direct baseline: VLESS + TCP + REALITY + Vision;
    - сеть с потерями, где UDP/QUIC доступен: Hysteria2 + TLS;
    - TLS/reverse proxy/CDN: VLESS или Trojan + WS/HTTPUpgrade/gRPC/XHTTP;
+   - Telegram-only proxy: MTProto FakeTLS через управляемый `mtg` sidecar;
    - простой legacy-compatible вариант: VLESS/Trojan + TCP + TLS;
    - Shadowsocks: только когда его client compatibility и простота важнее устойчивости VLESS/REALITY.
 
@@ -31,10 +32,11 @@ description: "Проектировать, создавать, проверять
    - Hysteria2: protocol `hysteria`, dedicated network `hysteria`, обязательный TLS и UDP/QUIC;
    - VMess поддерживает stream transports и TLS, но не REALITY/Vision;
    - HTTP, Mixed, Tunnel, TUN и WireGuard имеют собственные settings и не используют обычный stream selector;
+   - MTProto не обслуживается Xray: у него нет Xray clients/stream settings, а share link предназначен для Telegram;
    - актуальное имя SplitHTTP transport в панели: `xhttp`.
 
 4. Открыть нужные references:
-   - proxy-протоколы: [vless.md](references/vless.md), [vmess.md](references/vmess.md), [trojan.md](references/trojan.md), [shadowsocks.md](references/shadowsocks.md), [hysteria.md](references/hysteria.md);
+   - proxy-протоколы: [vless.md](references/vless.md), [vmess.md](references/vmess.md), [trojan.md](references/trojan.md), [shadowsocks.md](references/shadowsocks.md), [hysteria.md](references/hysteria.md), [mtproto.md](references/mtproto.md);
    - VPN/local inbounds: [wireguard.md](references/wireguard.md), [http-mixed.md](references/http-mixed.md), [tunnel.md](references/tunnel.md), [tun.md](references/tun.md);
    - security/flow: [reality.md](references/reality.md), [vision.md](references/vision.md);
    - transports: [tcp.md](references/tcp.md), [mkcp.md](references/mkcp.md), [websocket.md](references/websocket.md), [grpc.md](references/grpc.md), [httpupgrade.md](references/httpupgrade.md), [splithttp.md](references/splithttp.md);
@@ -59,7 +61,7 @@ description: "Проектировать, создавать, проверять
 ## Совместимость
 
 - **v2rayNG:** Xray-based; VLESS, REALITY, Vision и Xray transports зависят от bundled core и версии приложения. XHTTP требует актуальной версии.
-- **sing-box:** официально поддерживает VLESS и `xtls-rprx-vision`, WS, gRPC и HTTPUpgrade. Его официальная V2Ray transport schema не перечисляет XHTTP; не конвертировать XHTTP автоматически.
+- **sing-box 1.13:** поддерживает VLESS/`xtls-rprx-vision`, WS, gRPC и HTTPUpgrade. XHTTP не входит в официальную V2Ray transport schema. Legacy WireGuard outbound удалён; использовать WireGuard endpoint.
 - **sing-box и Hysteria2:** использовать отдельный `type: hysteria2`; должны совпадать password, TLS SNI, Salamander и port-hopping fields.
 - **Shadowrocket:** актуальные App Store release notes подтверждают VLESS/XTLS/REALITY и XHTTP, но XHTTP активно меняется; проверять конкретную версию и импортированные поля.
 - **Podkop:** URL mode поддерживает VLESS, Shadowsocks, Trojan и Hysteria2, а также custom sing-box outbound. Для REALITY/Vision использовать VLESS URL или официальный custom outbound example. XHTTP считать неподтвержденным, пока его не поддерживает используемый sing-box/парсер Podkop.
@@ -75,6 +77,8 @@ description: "Проектировать, создавать, проверять
 - Для Podkop сначала пробовать минимальную VLESS REALITY Vision link; при unsupported link использовать custom sing-box outbound без XHTTP.
 - Для Hysteria2 открывать именно UDP, проверять сертификат/SNI и не путать UDP listener с TCP на том же номере порта.
 - Не включать Hysteria2 как единственный вариант, если целевая сеть полностью блокирует или стабильно режет UDP; держать TCP-based fallback.
+- Не путать official Hysteria `v2.9.2` с Xray Hysteria transport: Gecko, Realms и расширенные QUIC/congestion fields могут отсутствовать в форме 3X-UI.
+- Для MTProto использовать валидный FakeTLS domain и хранить `ee`-prefixed secret как credential.
 
 ## Обязательный аудит детекта
 
@@ -124,11 +128,12 @@ The final answer MUST include:
 
 ## Актуальность
 
-База повторно проверена 2026-06-07:
+База повторно проверена 2026-06-12:
 
-- 3X-UI release `v3.2.8` от 2026-06-05;
-- repository commit `483952cfa0333a051f78c3aedf37f4c25945042a` от 2026-06-06;
-- Wiki commit `264a7b202aacc0036a1fbb95a285d3e2981a3578` от 2026-06-03;
-- bundled Xray-core pseudo-version `v1.260327.1-0.20260601021109-94ffd50060f1`.
+- 3X-UI release `v3.3.0`, commit `f8e89cc848b908d8507f30e0e35a0a74d6fe983c`;
+- Wiki commit `264a7b202aacc0036a1fbb95a285d3e2981a3578`;
+- bundled Xray-core artifact `v26.6.1`, module revision `94ffd50060f1`;
+- sing-box `v1.13.13`;
+- Hysteria `v2.9.2`.
 
 Клиентскую совместимость проверять заново перед применением.

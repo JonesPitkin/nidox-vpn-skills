@@ -68,7 +68,7 @@ ss -lntup
 ## Источники
 
 - [3X-UI Wiki Home](https://github.com/MHSanaei/3x-ui/wiki)
-- [3X-UI VMess schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/inbound/vmess.ts)
+- [3X-UI VMess schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/inbound/vmess.ts)
 - [Xray VMess inbound](https://xtls.github.io/en/config/inbounds/vmess.html)
 - [sing-box VMess outbound](https://sing-box.sagernet.org/configuration/outbound/vmess/)
 - [v2rayNG](https://github.com/2dust/v2rayNG)

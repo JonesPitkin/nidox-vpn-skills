@@ -83,7 +83,7 @@ journalctl -u x-ui -n 150 --no-pager | grep -i shadowsocks
 
 ## Источники
 
-- [Shadowsocks schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/inbound/shadowsocks.ts)
-- [SS2022 fixture](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/test/golden/fixtures/inbound-full/shadowsocks-tcp-2022.json)
-- [Client key validation](https://github.com/MHSanaei/3x-ui/blob/main/web/service/client.go)
+- [Shadowsocks schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/inbound/shadowsocks.ts)
+- [SS2022 fixture](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/test/golden/fixtures/inbound-full/shadowsocks-tcp-2022.json)
+- [Client key validation](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/web/service/client.go)
 - [Podkop sections](https://podkop.net/docs/sections/)

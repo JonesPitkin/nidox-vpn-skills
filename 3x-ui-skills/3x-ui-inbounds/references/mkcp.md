@@ -63,4 +63,4 @@ mKCP — UDP transport Xray с configurable header camouflage. Wiki 3X-UI пер
 
 - [3X-UI Wiki Home](https://github.com/MHSanaei/3x-ui/wiki)
 - [Xray mKCP transport](https://xtls.github.io/en/config/transports/mkcp.html)
-- [3X-UI stream form](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/pages/inbounds/form/InboundFormModal.tsx)
+- [3X-UI stream form](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/pages/inbounds/form/InboundFormModal.tsx)

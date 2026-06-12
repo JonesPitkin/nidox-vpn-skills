@@ -112,7 +112,7 @@ pg_restore --list /root/backup-3x-ui/x-ui-*.dump | sed -n '1,40p'
 
 Restore выполнять в тестовую/пустую database либо через panel UI. Реализация panel останавливает Xray/DB operations и пытается не менять database при failed restore, но backup перед restore обязателен.
 
-TODO: официальный Wiki не дает отдельного полного CLI runbook для PostgreSQL restore и version compatibility. Перед production restore сверить PostgreSQL docs для версий server/client и актуальную реализацию `web/service/server.go`.
+Ограничение источников: официальный Wiki не дает отдельного полного CLI runbook для PostgreSQL restore и гарантии совместимости версий. Перед production restore сверить PostgreSQL docs для установленных server/client и актуальную реализацию `web/service/server.go`.
 
 ## 4. Docker
 
@@ -181,10 +181,10 @@ apt-get install -y postgresql-client
 
 ## 8. Источники
 
-- [README: export/import and database options](https://github.com/MHSanaei/3x-ui/blob/main/README.md)
+- [README: export/import and database options](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/README.md)
 - [Wiki: Telegram database backup](https://github.com/MHSanaei/3x-ui/wiki/Advanced)
 - [Wiki FAQ: backup schedule and database errors](https://github.com/MHSanaei/3x-ui/wiki/Common-questions-and-problems)
-- [x-ui.sh migrateDB implementation](https://github.com/MHSanaei/3x-ui/blob/main/x-ui.sh)
-- [Server backup/restore implementation](https://github.com/MHSanaei/3x-ui/blob/main/web/service/server.go)
-- [Backup controller](https://github.com/MHSanaei/3x-ui/blob/main/web/controller/server.go)
-- [SQLite dump/restore](https://github.com/MHSanaei/3x-ui/blob/main/database/dump_sqlite.go)
+- [x-ui.sh migrateDB implementation](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/x-ui.sh)
+- [Server backup/restore implementation](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/web/service/server.go)
+- [Backup controller](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/web/controller/server.go)
+- [SQLite dump/restore](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/database/dump_sqlite.go)

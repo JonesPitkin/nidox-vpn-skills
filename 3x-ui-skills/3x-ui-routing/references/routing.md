@@ -74,5 +74,5 @@ curl -4 https://api.ipify.org
 ## Источники
 
 - [3X-UI README: routing/outbounds](https://github.com/MHSanaei/3x-ui)
-- [3X-UI routing schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/routing.ts)
+- [3X-UI routing schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/routing.ts)
 - [Xray routing](https://xtls.github.io/en/config/routing.html)

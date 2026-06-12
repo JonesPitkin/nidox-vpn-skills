@@ -81,7 +81,7 @@ journalctl -u x-ui -n 150 --no-pager
 
 ## Источники
 
-- [WS schema](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/schemas/protocols/stream/ws.ts)
-- [WS fixture](https://github.com/MHSanaei/3x-ui/blob/main/frontend/src/test/golden/fixtures/inbound-full/vless-ws-tls.json)
+- [WS schema](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/schemas/protocols/stream/ws.ts)
+- [WS fixture](https://github.com/MHSanaei/3x-ui/blob/v3.3.0/frontend/src/test/golden/fixtures/inbound-full/vless-ws-tls.json)
 - [Wiki reverse proxy](https://github.com/MHSanaei/3x-ui/wiki/Configuration#reverse-proxy)
 - [sing-box V2Ray transports](https://sing-box.sagernet.org/configuration/shared/v2ray-transport/)
