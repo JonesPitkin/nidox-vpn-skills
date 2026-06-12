@@ -1,29 +1,19 @@
 # SKILL_DEPENDENCIES
 
 ```text
-network-fundamentals
+network-fundamentals-skill
 │
 ├── sing-box-skills
-│   ├── podkop-skills
-│   ├── 3x-ui-skills
-│   ├── remnawave-skills
-│   └── cloudflare-skills
-│
+├── podkop-skills
+├── 3x-ui-skills
+├── remnawave-skills
+├── cloudflare-skills
 ├── openwrt-cudy-wr3000s-skills
-│   ├── podkop-skills
-│   └── sing-box-skills
-│
 └── nidox-vpn-detection-defense-skill
-    ├── audits sing-box-skills
-    ├── audits podkop-skills
-    ├── audits 3x-ui-skills
-    ├── audits remnawave-skills
-    └── audits cloudflare-skills
 ```
 
 ## Notes
 
-- `network-fundamentals` is the conceptual base layer.
-- `sing-box-skills` acts as a central protocol and deployment layer for multiple VPN-related skill families.
-- `openwrt-cudy-wr3000s-skills` remains the hardware and platform specialization layer.
-- `nidox-vpn-detection-defense-skill` remains the audit layer inside `nidox-vpn-skills`.
+- `network-fundamentals-skill` is the mandatory conceptual and operational base layer.
+- `sing-box-skills`, `podkop-skills`, `3x-ui-skills`, `remnawave-skills`, `cloudflare-skills` and `openwrt-cudy-wr3000s-skills` all depend on this shared network base.
+- `nidox-vpn-detection-defense-skill` also depends on `network-fundamentals-skill`, because audit conclusions require common grounding in routing, DNS, MTU, NAT, TLS, firewall and Internet delivery concepts.

@@ -149,6 +149,16 @@ nidox-vpn-skills/
 
 Раздел предназначен для общей сетевой теории и практической диагностики: OSI, TCP/IP, TCP и UDP, MTU и MSS, NAT и CGNAT, routing, gateway, DNS, IPv4, IPv6 и порты.
 
+`network-fundamentals-skill` является обязательной базовой зависимостью для:
+
+- `sing-box-skills`
+- `podkop-skills`
+- `3x-ui-skills`
+- `remnawave-skills`
+- `cloudflare-skills`
+- `openwrt-cudy-wr3000s-skills`
+- `nidox-vpn-detection-defense-skill`
+
 ## Связанные репозитории
 
 - `3x-ui-skills` — самостоятельный репозиторий навыков для 3x-ui.
@@ -161,6 +171,8 @@ nidox-vpn-skills/
 - `nidox-vpn-detection-defense-skill` — отдельный аудит-модуль для проверки VPN skills.
 
 Отдельные репозитории могут использоваться сами по себе без обязательного аудита. Обязательная проверка через `nidox-vpn-detection-defense-skill` включается в тот момент, когда skill используется внутри `nidox-vpn-skills`.
+
+При этом `network-fundamentals-skill` рассматривается как обязательный базовый слой знаний для всех перечисленных VPN-репозиториев и аудит-модуля.
 
 ## License
 
