@@ -4,6 +4,8 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+Current release: `v1.0.0` — `NIDOX VPN Skills Foundation`
+
 Сюда складываются skills, относящиеся к следующим направлениям:
 
 - 3x-ui
@@ -49,6 +51,7 @@
 ## Быстрая навигация
 
 - [NIDOX_SKILLS_INDEX.md](./NIDOX_SKILLS_INDEX.md) — главный индекс всех навыков репозитория.
+- [CHANGELOG.md](./CHANGELOG.md) — история релизов и изменений репозитория.
 - [SKILL_INDEX.md](./SKILL_INDEX.md) — центральный каталог VPN Skills со статусами и требованиями к аудиту.
 - [AUDIT_POLICY.md](./AUDIT_POLICY.md) — правила обязательного аудита skills внутри `nidox-vpn-skills`.
 - [REPOSITORY_POLICY.md](./REPOSITORY_POLICY.md) — разграничение ролей главного репозитория и самостоятельных skill-репозиториев.
