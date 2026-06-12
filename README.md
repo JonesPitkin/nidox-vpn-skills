@@ -24,7 +24,17 @@
 - remnawave-skills
 - sing-box-skills
 
-Репозиторий фиксирует общую структуру VPN-навыков и задаёт единые правила аудита. При этом существующие skill-файлы и ранее созданные каталоги сохраняются и могут использоваться как часть переходного периода.
+## Базовые skill-пакеты
+
+- `network-fundamentals`
+- `cloudflare-skills`
+- `openwrt-cudy-wr3000s-skills`
+- `sing-box-skills`
+- `3x-ui-skills`
+- `podkop-skills`
+- `remnawave-skills`
+
+Репозиторий фиксирует общую структуру VPN-навыков и задаёт единые правила аудита. Основной рабочей моделью считаются самостоятельные skill-репозитории и встроенные каталоги верхнего уровня без legacy-обёртки `skills/`.
 
 ## Skill repositories
 
@@ -68,19 +78,6 @@ nidox-vpn-skills/
 │   ├── macOS/
 │   ├── packages/
 │   └── README.md
-├── skills/
-│   ├── 3x-ui/
-│   │   └── README.md
-│   ├── podkop/
-│   │   └── README.md
-│   ├── openwrt-cudy-wr3000s/
-│   │   └── README.md
-│   ├── sing-box/
-│   │   └── README.md
-│   ├── cloudflare/
-│   │   └── README.md
-│   └── remnawave/
-│       └── README.md
 ├── 3x-ui-skills/
 │   ├── README.md
 │   ├── SKILL_INDEX.md
@@ -95,9 +92,15 @@ nidox-vpn-skills/
 │   └── ...
 ├── cloudflare-skills/
 │   ├── README.md
-│   ├── SKILL_INDEX.md
-│   ├── VERSION_MATRIX.md
-│   ├── MIGRATION_GUIDE.md
+│   ├── LICENSE
+│   ├── cloudflare-basics/
+│   ├── cloudflare-dns/
+│   ├── cloudflare-ssl-tls/
+│   ├── cloudflare-proxy-cdn/
+│   ├── cloudflare-tunnel/
+│   ├── cloudflare-zero-trust/
+│   ├── cloudflare-security/
+│   ├── cloudflare-vpn-integration/
 │   └── ...
 ├── remnawave-skills/
 │   ├── README.md
@@ -121,7 +124,7 @@ nidox-vpn-skills/
     └── nidox-vpn-detection-defense-skill.md
 ```
 
-Каталог `skills/` является целевой мета-структурой для VPN-навыков внутри этого репозитория. Если конкретный skill ещё не перенесён или не оформлен отдельно, внутри каталога хранится служебный `README.md`, чтобы структура оставалась явной и сохранялась в Git.
+Legacy-каталог `skills/` удалён из активной структуры репозитория после переноса к самостоятельным skill-репозиториям и верхнеуровневым пакетам.
 
 ## Политика аудита
 
