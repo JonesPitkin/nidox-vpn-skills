@@ -48,6 +48,7 @@
 
 ## Быстрая навигация
 
+- [NIDOX_SKILLS_INDEX.md](./NIDOX_SKILLS_INDEX.md) — главный индекс всех навыков репозитория.
 - [SKILL_INDEX.md](./SKILL_INDEX.md) — центральный каталог VPN Skills со статусами и требованиями к аудиту.
 - [AUDIT_POLICY.md](./AUDIT_POLICY.md) — правила обязательного аудита skills внутри `nidox-vpn-skills`.
 - [REPOSITORY_POLICY.md](./REPOSITORY_POLICY.md) — разграничение ролей главного репозитория и самостоятельных skill-репозиториев.
@@ -55,11 +56,14 @@
 - [CONTRIBUTING.md](./CONTRIBUTING.md) — требования к структуре и включению новых Skills.
 - [network-fundamentals/](./network-fundamentals/) — встроенный фундаментальный skill по сетям.
 
+`NIDOX_SKILLS_INDEX.md` является главным индексом всех навыков репозитория.
+
 ## Структура репозитория
 
 ```text
 nidox-vpn-skills/
 ├── README.md
+├── NIDOX_SKILLS_INDEX.md
 ├── AUDIT_POLICY.md
 ├── REPOSITORY_POLICY.md
 ├── SKILL_INDEX.md
