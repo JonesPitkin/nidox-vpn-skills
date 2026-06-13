@@ -317,7 +317,7 @@ Only sing-box-side client examples:
 {
   "tls": {
     "enabled": true,
-    "server_name": "panel.example.com"
+    "server_name": "content.example.com"
   }
 }
 ```

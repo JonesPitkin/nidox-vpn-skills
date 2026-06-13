@@ -8,19 +8,27 @@
 ## Пошаговая настройка
 
 1. Создать отдельные hostnames по назначению:
-   - `panel.example.com` — proxied/Tunnel;
-   - `ws.example.com` — proxied;
-   - `reality.example.com` — DNS-only.
+   - `content.example.com` — proxied/Tunnel только для защищенного admin/subscription HTTP service за hidden path и Access/IP restriction;
+   - `assets.example.com` — proxied для site-shaped HTTP transport;
+   - `files.example.com` — DNS-only для direct endpoint, если transport не должен идти через CDN.
 2. Создать A/AAAA/CNAME на origin.
 3. Выбрать proxy status по transport.
 4. Подождать TTL и проверить authoritative answer.
 5. Проверить origin отдельно через IP + SNI.
 
 ```sh
-dig A panel.example.com
-dig AAAA panel.example.com
-dig CNAME panel.example.com
+dig A content.example.com
+dig AAAA content.example.com
+dig CNAME content.example.com
 ```
+
+Не использовать как дефолт:
+
+- `vpn.*`
+- `proxy.*`
+- `ws.*`
+- `panel.*`
+- `admin.*`
 
 ## DNS challenge для сертификата
 
@@ -41,7 +49,7 @@ dig CNAME panel.example.com
 
 ## Проверка
 
-Сравнить ответы нескольких resolvers и Cloudflare dashboard. Для proxied record отсутствие origin IP в публичном ответе ожидаемо.
+Сравнить ответы нескольких resolvers и Cloudflare dashboard. Для proxied record отсутствие origin IP в публичном ответе ожидаемо. Дополнительно проверить, что нет лишних `A`/`AAAA`/`CNAME`, раскрывающих origin в соседних hostname.
 
 ## Источники
 

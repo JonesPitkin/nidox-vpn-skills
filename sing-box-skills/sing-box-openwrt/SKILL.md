@@ -318,12 +318,12 @@ Again, only sing-box-side compatibility logic is valid.
     {
       "type": "vless",
       "tag": "proxy",
-      "server": "panel.example.com",
+      "server": "content.example.com",
       "server_port": 443,
       "uuid": "11111111-1111-1111-1111-111111111111",
       "tls": {
         "enabled": true,
-        "server_name": "panel.example.com"
+        "server_name": "content.example.com"
       }
     }
   ],

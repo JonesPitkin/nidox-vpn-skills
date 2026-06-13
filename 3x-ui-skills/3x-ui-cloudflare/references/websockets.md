@@ -7,14 +7,17 @@
 - supported port;
 - одинаковые Host/path на client, Cloudflare route/reverse proxy и Xray inbound;
 - WebSockets enabled в Cloudflare Network settings, если toggle доступен.
+- hostname и path должны выглядеть как часть обычного сайта.
 
 ## Настройка 3X-UI
 
 1. Создать VLESS/Trojan inbound с transport `ws`.
-2. Задать непустой уникальный path.
+2. Задать непустой уникальный site-shaped path, например `/assets/js/runtime-v2.js` или `/static/js/chunk-main.js`.
 3. Если используется reverse proxy, направить этот path на Xray listener.
-4. Client address — Cloudflare hostname, edge port обычно 443.
+4. Client address — нейтральный Cloudflare hostname вроде `assets.example.com`, edge port обычно 443.
 5. Security — TLS на edge; origin leg защищать `Full (strict)`.
+
+Запрещено использовать path вроде `/ws`, `/vpn`, `/proxy`, `/vless` или `/xray`.
 
 Nginx должен передавать upgrade:
 
@@ -33,7 +36,7 @@ proxy_set_header Host $host;
 curl -i --http1.1 \
   -H 'Connection: Upgrade' \
   -H 'Upgrade: websocket' \
-  https://ws.example.com/<path>
+  https://assets.example.com/assets/js/runtime-v2.js
 ```
 
 Ответ зависит от Xray/reverse proxy; важны отсутствие обычного 404/redirect и logs handshake.
@@ -45,6 +48,7 @@ curl -i --http1.1 \
 - `502`: reverse proxy не достигает Xray.
 - Периодические disconnects: long-lived connection terminated; client reconnect должен работать.
 - REALITY включен вместе с proxied WS: недопустимая архитектура.
+- Path и hostname выглядят как transport label, а не как часть сайта.
 
 ## Источники
 

@@ -48,7 +48,7 @@ x-ui
 Для domain ACME проверить DNS и port 80:
 
 ```sh
-getent ahostsv4 panel.example.com
+getent ahostsv4 content.example.com
 ss -ltnp | grep ':80 '
 ```
 
@@ -146,7 +146,7 @@ x-ui banlog
 x-ui settings
 ss -lntup
 ufw status verbose
-curl -kI "https://panel.example.com/<path>/"
+curl -kI "https://content.example.com/<hidden-panel-path>/"
 systemctl is-active x-ui
 systemctl is-active fail2ban
 ```

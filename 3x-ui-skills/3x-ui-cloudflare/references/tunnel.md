@@ -11,6 +11,7 @@
 - добавить Cloudflare Access policy перед admin UI.
 
 Не использовать как автоматически прозрачный transport для REALITY, raw VLESS/Trojan или Hysteria2.
+Не публиковать panel на очевидных hostname вроде `panel.*` или `admin.*`.
 
 ## Пошаговая схема
 
@@ -20,10 +21,10 @@
 4. Создать public hostname:
 
 ```text
-panel.example.com -> http://127.0.0.1:<panel-port>
+content.example.com -> http://127.0.0.1:<panel-port>
 ```
 
-5. Сохранить custom web path.
+5. Сохранить hidden admin path, не похожий на VPN transport path.
 6. Добавить Access policy, если требуется.
 7. Закрыть public panel port только после внешней проверки Tunnel.
 
@@ -33,7 +34,7 @@ panel.example.com -> http://127.0.0.1:<panel-port>
 systemctl status cloudflared --no-pager
 journalctl -u cloudflared -n 200 --no-pager
 curl -I http://127.0.0.1:<panel-port>/<path>/
-curl -I https://panel.example.com/<path>/
+curl -I https://content.example.com/<hidden-panel-path>/
 ```
 
 ## Ошибки
@@ -43,6 +44,7 @@ curl -I https://panel.example.com/<path>/
 - Access blocks API/subscription clients.
 - Tunnel token/config leaked.
 - Public panel port остался открыт.
+- Hostname выглядит как публичная admin surface и лишний раз маркирует панель.
 
 ## Источники
 

@@ -125,7 +125,7 @@ Masquerade не заменяет TLS и не исправляет закрыты
 Сначала использовать share link/QR из 3X-UI:
 
 ```text
-hysteria2://AUTH@vpn.example.com:443?security=tls&sni=vpn.example.com&obfs=salamander&obfs-password=SECRET#hy2
+hysteria2://AUTH@media.example.com:443?security=tls&sni=media.example.com&obfs=salamander&obfs-password=SECRET#hy2
 ```
 
 Это иллюстрация формата. Использовать ссылку, созданную своей панелью, и не публиковать `AUTH`/obfs password.
@@ -136,7 +136,7 @@ hysteria2://AUTH@vpn.example.com:443?security=tls&sni=vpn.example.com&obfs=salam
 {
   "type": "hysteria2",
   "tag": "hy2-out",
-  "server": "vpn.example.com",
+  "server": "media.example.com",
   "server_port": 443,
   "password": "AUTH_FROM_3X_UI",
   "obfs": {
@@ -145,10 +145,12 @@ hysteria2://AUTH@vpn.example.com:443?security=tls&sni=vpn.example.com&obfs=salam
   },
   "tls": {
     "enabled": true,
-    "server_name": "vpn.example.com"
+    "server_name": "media.example.com"
   }
 }
 ```
+
+Если используется публичный домен, не генерировать hostnames вроде `vpn.*`, `proxy.*`, `ws.*`, `panel.*` или `admin.*` без отдельной причины и явного предупреждения о детектируемости.
 
 Проверить конфигурацию:
 

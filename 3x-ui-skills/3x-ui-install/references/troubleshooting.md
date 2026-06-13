@@ -201,7 +201,7 @@ x-ui migrateDB /root/test.dump /root/test-restored.db
 ```sh
 x-ui settings
 find /root/cert -maxdepth 3 -type f -name '*.pem' -ls 2>/dev/null
-openssl s_client -connect panel.example.com:443 -servername panel.example.com </dev/null
+openssl s_client -connect content.example.com:443 -servername content.example.com </dev/null
 ```
 
 ACME domain:

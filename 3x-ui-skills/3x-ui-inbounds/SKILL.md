@@ -72,6 +72,8 @@ description: "Проектировать, создавать, проверять
 - Генерировать Reality keypair и short IDs средствами панели; клиент получает только public key и один short ID.
 - Не использовать CDN перед REALITY: обычный CDN должен завершать TLS и несовместим с direct REALITY handshake.
 - Для CDN/reverse proxy точно синхронизировать host/path/service name и protocol support.
+- Для CDN-публикации использовать нейтральные hostname вроде `assets.*`, `static.*`, `media.*`, `content.*`, `files.*` и site-shaped paths вроде `/assets/js/runtime-v2.js`, `/static/js/chunk-main.js`, `/media/content/stream`, `/api/v1/content/sync`.
+- Не генерировать очевидные hostname или paths вроде `vpn.*`, `proxy.*`, `ws.*`, `panel.*`, `admin.*`, `/ws`, `/vpn`, `/proxy`, `/vless`, `/xray`.
 - Не включать `acceptProxyProtocol`, если upstream proxy реально не отправляет PROXY protocol.
 - Не считать HTTP camouflage для Raw TCP эквивалентом TLS или REALITY.
 - Для Podkop сначала пробовать минимальную VLESS REALITY Vision link; при unsupported link использовать custom sing-box outbound без XHTTP.

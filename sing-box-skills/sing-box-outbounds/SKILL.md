@@ -555,12 +555,12 @@ Useful for infra-like peer connectivity and routed egress, using the modern endp
     {
       "type": "trojan",
       "tag": "proxy",
-      "server": "panel.example.com",
+      "server": "content.example.com",
       "server_port": 443,
       "password": "panel-password",
       "tls": {
         "enabled": true,
-        "server_name": "panel.example.com"
+        "server_name": "content.example.com"
       }
     }
   ]
@@ -575,13 +575,13 @@ Useful for infra-like peer connectivity and routed egress, using the modern endp
     {
       "type": "vmess",
       "tag": "proxy",
-      "server": "panel.example.com",
+      "server": "content.example.com",
       "server_port": 443,
       "uuid": "11111111-1111-1111-1111-111111111111",
       "security": "auto",
       "tls": {
         "enabled": true,
-        "server_name": "panel.example.com"
+        "server_name": "content.example.com"
       }
     }
   ]

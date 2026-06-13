@@ -17,6 +17,7 @@
 4. Настроить origin certificate и `Full (strict)`.
 5. Ограничить origin firewall Cloudflare source ranges, если direct access не нужен.
 6. Проверить path/Host/SNI.
+7. Проверить, что hostname и path не выглядят как `vpn.*`, `proxy.*`, `ws.*`, `/ws`, `/vpn`, `/proxy`, `/vless` или `/xray`.
 
 ## Ограничения
 
@@ -25,12 +26,13 @@
 - limits на request size/timeouts и product availability зависят от plan;
 - long-lived connections могут разрываться при Cloudflare network changes;
 - cache не должен применяться к panel/API/WS/gRPC paths.
+- public DNS и соседние records не должны раскрывать origin IP без явной необходимости.
 
 ## Сценарии
 
-- Panel: proxied HTTPS reverse proxy.
+- Panel: proxied HTTPS reverse proxy только за hidden admin path и access controls.
 - Subscription: отдельный path/hostname без cache.
-- VLESS/Trojan WS: proxied HTTPS.
+- VLESS/Trojan WS: proxied HTTPS с site-shaped path.
 - REALITY/raw TCP/Hysteria2: DNS-only.
 
 ## Ошибки

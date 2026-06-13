@@ -53,6 +53,8 @@ ss -lntup
 - Не отправлять private/metadata IP через внешний proxy без явной причины.
 - Не публиковать proxy credentials, WARP keys, VPN configs и полный Xray JSON.
 - Не создавать catch-all rule до правил панели/API, DNS и исключений.
+- Если routing обслуживает CDN-публикованный transport или panel route, не предлагать obvious hostname/path вроде `vpn.*`, `proxy.*`, `ws.*`, `panel.*`, `admin.*`, `/ws`, `/vpn`, `/proxy`, `/vless`, `/xray`.
+- Для HTTP/CDN-сценариев сохранять site-shaped hostname/path и разделять panel route от transport route.
 - `outboundTag` и `balancerTag` не задавать одновременно: текущий UI предупреждает, что `outboundTag` получает приоритет.
 - Не переносить `geosite:`/`geoip:` напрямую в sing-box 1.13: legacy databases и rule fields удалены, нужны rule-sets.
 - Legacy WireGuard outbound sing-box удалён; использовать WireGuard endpoint.

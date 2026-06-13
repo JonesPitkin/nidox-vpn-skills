@@ -19,8 +19,8 @@ Cloudflare завершает edge TLS и проксирует HTTP(S) к origin
 
 Использовать для:
 
-- панели и subscription endpoint;
-- WebSocket over TLS;
+- панели и subscription endpoint только при hidden panel routing;
+- WebSocket over TLS с site-shaped hostname/path;
 - gRPC over TLS при выполнении требований.
 
 ## Tunnel
@@ -28,6 +28,14 @@ Cloudflare завершает edge TLS и проксирует HTTP(S) к origin
 Cloudflare Tunnel устанавливает outbound-only connections от `cloudflared` к Cloudflare и подходит для panel/subscription HTTP services. Для публичного arbitrary TCP/UDP proxy нужен иной продукт/архитектура; standard Tunnel hostname не является прозрачной заменой REALITY или Hysteria2 listener.
 
 `cloudflared` устанавливает outbound connection из origin в Cloudflare. Подходит для HTTP panel/subscription без public origin port. Arbitrary non-HTTP access требует отдельного Cloudflare Access/WARP/client-side design; не считать Tunnel прозрачной заменой Xray TCP/UDP listener.
+
+## Site-first architecture
+
+Для Cloudflare publication считать домен обычным сайтом со статикой, а не transport label:
+
+- нейтральные hostnames: `assets.*`, `static.*`, `media.*`, `content.*`, `files.*`;
+- site-shaped paths: `/assets/js/runtime-v2.js`, `/static/js/chunk-main.js`, `/media/content/stream`, `/api/v1/content/sync`;
+- запрещены obvious hostnames и paths вроде `vpn.*`, `proxy.*`, `ws.*`, `panel.*`, `/ws`, `/vpn`, `/proxy`, `/vless`, `/xray`.
 
 ## Выбор
 
@@ -44,6 +52,7 @@ VLESS/Trojan определяют application protocol, а Cloudflare видит
 - Orange-cloud включен для REALITY hostname.
 - Gray-cloud считается защитой origin.
 - Panel и inbound используют один hostname/path без четкого reverse proxy routing.
+- Hostname или path явно маркируют transport и выглядят как VPN endpoint.
 - CDN применяется для Hysteria2, хотя нужен UDP.
 
 ## Источники

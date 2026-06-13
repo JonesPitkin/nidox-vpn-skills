@@ -60,7 +60,7 @@ Example:
 ./scripts/bootstrap-host.sh \
   --host root@example-vps \
   --ssh-password 'host-password' \
-  --domain vpn.example.com \
+  --domain assets.example.com \
   --panel-username admin \
   --panel-password 'panel-secret'
 ```
@@ -125,7 +125,7 @@ python3 scripts/bootstrap-inbound.py \
   --panel-url http://127.0.0.1:12053 \
   --username admin \
   --password 'secret' \
-  --public-domain vpn.example.com \
+  --public-domain assets.example.com \
   --backend-port 1234 \
   --path /xhttp-keep-this-secret
 ```

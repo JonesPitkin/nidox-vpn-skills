@@ -34,8 +34,8 @@ Panel backend не публиковать. Если HSTS завершает вн
 ## Проверка
 
 ```sh
-openssl s_client -connect panel.example.com:443 -servername panel.example.com </dev/null
-curl -I https://panel.example.com/<path>/
+openssl s_client -connect content.example.com:443 -servername content.example.com </dev/null
+curl -I https://content.example.com/<hidden-panel-path>/
 ```
 
 ## Ошибки
@@ -45,6 +45,7 @@ curl -I https://panel.example.com/<path>/
 - Reverse proxy не передает path/headers.
 - Origin CA открыт напрямую: browser ему не доверяет.
 - Private key имеет слишком широкие permissions.
+- Публичный hostname выглядит как `panel.*` или `admin.*` и маркирует admin surface.
 
 ## Источники
 

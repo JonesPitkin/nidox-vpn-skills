@@ -29,6 +29,7 @@ description: "Проводить аудит и укрепление 3X-UI: crede
 - HTTPS либо panel на loopback за SSH tunnel/reverse proxy;
 - public firewall открывает только фактические SSH, reverse proxy и inbound ports;
 - panel port ограничен admin IP/VPN или не опубликован;
+- публичный hostname панели не выглядит как `panel.*` или `admin.*`; предпочтителен нейтральный hostname и hidden admin path;
 - SSH keys, запрет password/root login после проверки;
 - DB, private keys и backups доступны только владельцу;
 - API tokens имеют минимальный жизненный цикл, хранятся как secrets и отзываются после использования;
